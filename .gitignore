@@ -7,3 +7,4 @@ tmp/
 *.log
 .env*
 !.env.example
+4.8aloha_catalogs.xlsx
