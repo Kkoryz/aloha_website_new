@@ -29,7 +29,7 @@ export default function FAQ() {
     <div className="w-full">
       <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
-          <img src="/FAQ.png" alt="FAQ Hero" className="w-full h-full object-cover" />
+          <img src="/heroes/FAQ.png" alt="FAQ Hero" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
         <div className="relative z-10 max-w-4xl px-4 text-white">

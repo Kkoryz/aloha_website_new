@@ -12,6 +12,10 @@ type ProductWithCategory = Product & { category: string };
 const categoryOrder = Object.keys(categoryLabels);
 
 function ProductCard({ product }: { product: Product }) {
+  const imagePadding = 'p-4 sm:p-6';
+  const flatImageScale = 'group-hover:scale-95';
+  const hoverImageScale = 'scale-105 group-hover:scale-100';
+
   return (
     <Link
       to={`/product/${product.id}`}
@@ -22,7 +26,7 @@ function ProductCard({ product }: { product: Product }) {
         <img
           src={product.image}
           alt={product.name}
-          className="absolute inset-0 h-full w-full object-contain p-4 transition duration-500 group-hover:scale-95 group-hover:opacity-0 sm:p-6"
+          className={`absolute inset-0 h-full w-full object-contain transition duration-500 group-hover:opacity-0 ${imagePadding} ${flatImageScale}`}
           loading="lazy"
           decoding="async"
         />
@@ -30,7 +34,7 @@ function ProductCard({ product }: { product: Product }) {
           src={product.hoverImage || product.image}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full scale-105 object-contain p-4 opacity-0 transition duration-500 group-hover:scale-100 group-hover:opacity-100 sm:p-6"
+          className={`absolute inset-0 h-full w-full object-contain opacity-0 transition duration-500 group-hover:opacity-100 ${imagePadding} ${hoverImageScale}`}
           loading="lazy"
           decoding="async"
         />
@@ -97,7 +101,7 @@ export default function Shop() {
       {/* Hero */}
       <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
-          <img src="/shop_hero.png" alt="Shop Hero" className="w-full h-full object-cover" />
+          <img src="/heroes/shop_hero.png" alt="Shop Hero" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative z-10 max-w-4xl px-4">

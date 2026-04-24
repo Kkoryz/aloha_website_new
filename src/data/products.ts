@@ -64,6 +64,75 @@ export const featuredProductIds: Record<string, string[]> = {
   'aloha-shirts': [],
 };
 
+type MatchingSetPatternBase = {
+  baseId: string;
+  printDirection: string;
+  palette: string;
+};
+
+const matchingSetPatternBases: Record<string, MatchingSetPatternBase> = {
+  MS1001: {
+    baseId: 'matching11.png',
+    printDirection: 'soft watercolor palm-and-botanical wash with airy overlap; keep the exact same print across the shirt and shorts',
+    palette: 'soft ivory, sea-glass blue, faded aqua, and warm sand',
+  },
+  MS1002: {
+    baseId: 'matching5.png',
+    printDirection: 'washed stripe-and-leaf tropical print with relaxed vertical rhythm; keep the exact same print across the shirt and shorts',
+    palette: 'powder blue, ivory, pale sage, and warm sand',
+  },
+  MS1003: {
+    baseId: 'matching8.png',
+    printDirection: 'bold tropical collage blocks with layered leaves and postcard panels; keep the exact same print across the shirt and shorts',
+    palette: 'deep navy, coral, peach, ochre, and soft cream',
+  },
+  MS1101: {
+    baseId: 'matching3.png',
+    printDirection: 'subtle tonal micro-botanical repeat suited to knitted DTY fabric; keep the exact same print across the polo and shorts',
+    palette: 'muted sage, olive, and stone',
+  },
+  MSW2001: {
+    baseId: 'matching1.png',
+    printDirection: 'soft pastel botanical watercolor with open spacing; keep the exact same print across the top and shorts',
+    palette: 'ivory, aqua, blush, and pale sand',
+  },
+  MSW2002: {
+    baseId: 'matching9.png',
+    printDirection: 'airy aqua-and-sand botanical watercolor with light spacing; keep the exact same print across the top and shorts',
+    palette: 'ivory, seafoam, dusty aqua, and warm beige',
+  },
+  MSW2101: {
+    baseId: 'matching10.png',
+    printDirection: 'warm floral-botanical resort print with terracotta and olive foliage; keep the exact same print across the top and skirt',
+    palette: 'warm ivory, terracotta, olive, muted gold, and soft peach',
+  },
+  MSW2102: {
+    baseId: 'matching4.png',
+    printDirection: 'blue coral-and-botanical resort print with open spacing; keep the exact same print across the top and wrap skirt',
+    palette: 'ocean blue, coral, ivory, and soft leaf green',
+  },
+  MSK7001: {
+    baseId: 'matching2.png',
+    printDirection: 'playful blue tropical leaf print scaled down for childrenswear; keep the exact same print across the shirt and shorts',
+    palette: 'cobalt blue, aqua, ivory, and leaf green',
+  },
+  MSK7002: {
+    baseId: 'matching5.png',
+    printDirection: 'washed stripe-and-leaf tropical print scaled for a kids quick-dry set; keep the exact same print across the shirt and shorts',
+    palette: 'powder blue, ivory, pale sage, and warm sand',
+  },
+  MSF9001: {
+    baseId: 'matching11.png',
+    printDirection: 'soft watercolor family print with airy palms and botanical silhouettes carried consistently across mens, womens, and kids pieces',
+    palette: 'soft ivory, sea-glass blue, faded aqua, and warm sand',
+  },
+  MSF9002: {
+    baseId: 'matching8.png',
+    printDirection: 'navy tropical collage print translated into one coordinated family print story across all pieces',
+    palette: 'deep navy, coral, peach, ochre, and soft cream',
+  },
+};
+
 export const productLineSections: Record<string, ProductLineSection[]> = {
   'aloha-shirts': [
     {
@@ -683,6 +752,7 @@ const resortDressReferenceSpecs: Record<string, ResortDressReferenceSpec> = {
 const resortDressAIImageVersion = '20260424-ai-ref1';
 const generatedResortImageVersion = 'v=20260424-dressrefs1';
 const swimBaseStyleAIImageVersion = '20260424-swimcatalogpdf2';
+const matchingSetBaseStyleAIImageVersion = '20260425-matchingrefs3';
 
 function resortDressAIImageOverride(id: string): Partial<Product> {
   return {
@@ -729,6 +799,29 @@ const swimBaseStyleAIProductOverrides: Record<string, Partial<Product>> = {
   SWK7001: swimBaseStyleAIImageOverride('SWK7001'),
   SWK7002: swimBaseStyleAIImageOverride('SWK7002'),
   SWK7003: swimBaseStyleAIImageOverride('SWK7003'),
+};
+
+function matchingSetBaseStyleAIImageOverride(id: string): Partial<Product> {
+  return {
+    image: `/product-images/base-styles/matching-sets/${id}-flat.png?v=${matchingSetBaseStyleAIImageVersion}`,
+    hoverImage: `/product-images/base-styles/matching-sets/${id}-model.png?v=${matchingSetBaseStyleAIImageVersion}`,
+    detailImage: `/product-images/base-styles/matching-sets/${id}-flat.png?v=${matchingSetBaseStyleAIImageVersion}`,
+  };
+}
+
+const matchingSetBaseStyleAIProductOverrides: Record<string, Partial<Product>> = {
+  MS1001: matchingSetBaseStyleAIImageOverride('MS1001'),
+  MS1002: matchingSetBaseStyleAIImageOverride('MS1002'),
+  MS1003: matchingSetBaseStyleAIImageOverride('MS1003'),
+  MS1101: matchingSetBaseStyleAIImageOverride('MS1101'),
+  MSW2001: matchingSetBaseStyleAIImageOverride('MSW2001'),
+  MSW2002: matchingSetBaseStyleAIImageOverride('MSW2002'),
+  MSW2101: matchingSetBaseStyleAIImageOverride('MSW2101'),
+  MSW2102: matchingSetBaseStyleAIImageOverride('MSW2102'),
+  MSK7001: matchingSetBaseStyleAIImageOverride('MSK7001'),
+  MSK7002: matchingSetBaseStyleAIImageOverride('MSK7002'),
+  MSF9001: matchingSetBaseStyleAIImageOverride('MSF9001'),
+  MSF9002: matchingSetBaseStyleAIImageOverride('MSF9002'),
 };
 
 const generatedResortPalettes = [
@@ -885,10 +978,11 @@ function withGeneratedResortImages(product: Product, category: string): Product 
 
   const spec = generatedSpecForProduct(product, category);
   const dressReference = resortDressReferenceSpecs[product.id];
+  const matchingSetPatternBase = category === 'matching-sets' ? matchingSetPatternBases[product.id] : undefined;
   const line = findProductLine(category, product.id);
   const silhouette = dressReference?.silhouette || spec.silhouette;
-  const printDirection = dressReference?.printDirection || spec.printDirection;
-  const palette = dressReference?.palette || spec.palette;
+  const printDirection = matchingSetPatternBase?.printDirection || dressReference?.printDirection || spec.printDirection;
+  const palette = matchingSetPatternBase?.palette || dressReference?.palette || spec.palette;
 
   return {
     ...product,
@@ -906,6 +1000,7 @@ function withGeneratedResortImages(product: Product, category: string): Product 
       `Style: ${product.name}`,
       `Fabric: ${product.fabric}`,
       `Product Kind: ${spec.productKind}`,
+      ...(matchingSetPatternBase ? [`Pattern Base: ${matchingSetPatternBase.baseId}`] : []),
       `Silhouette: ${silhouette}`,
       `Print Direction: ${printDirection}`,
       `Size Range: ${spec.sizeRange}`,
@@ -922,7 +1017,11 @@ function withGeneratedResortImages(product: Product, category: string): Product 
       printDirection,
       palette,
       sourceImage: dressReference?.sourceImage,
-      referenceNotes: dressReference ? `Silhouette reference: ${dressReference.silhouetteReference}` : undefined,
+      referenceNotes: dressReference
+        ? `Silhouette reference: ${dressReference.silhouetteReference}`
+        : matchingSetPatternBase
+          ? `Pattern base: ${matchingSetPatternBase.baseId}`
+          : undefined,
     }),
   };
 }
@@ -948,6 +1047,23 @@ function applySwimBaseStyleAIOverride(product: Product): Product {
   return {
     ...product,
     ...override,
+  };
+}
+
+function applyMatchingSetBaseStyleAIOverride(product: Product): Product {
+  const override = matchingSetBaseStyleAIProductOverrides[product.id];
+  if (!override) return product;
+
+  const matchingSetPatternBase = matchingSetPatternBases[product.id];
+
+  return {
+    ...product,
+    ...override,
+    details: product.details?.map((detail) => (
+      matchingSetPatternBase && detail.startsWith('Pattern Base: ')
+        ? `Pattern Base: ${matchingSetPatternBase.baseId}`
+        : detail
+    )),
   };
 }
 
@@ -1029,7 +1145,13 @@ const productsDataSource: Record<string, Product[]> = {
 export const productsData: Record<string, Product[]> = Object.fromEntries(
   Object.entries(productsDataSource).map(([category, products]) => [
     category,
-    products.map((product) => applySwimBaseStyleAIOverride(applyResortDressAIOverride(withGeneratedResortImages(product, category)))),
+    products.map((product) => applyMatchingSetBaseStyleAIOverride(
+      applySwimBaseStyleAIOverride(
+        applyResortDressAIOverride(
+          withGeneratedResortImages(product, category),
+        ),
+      ),
+    )),
   ]),
 ) as Record<string, Product[]>;
 

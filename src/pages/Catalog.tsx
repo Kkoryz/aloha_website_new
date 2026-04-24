@@ -15,13 +15,16 @@ const catalogStats = [
   ['24h', 'Response time'],
 ];
 
+const catalogPdfHref = '/Aloha_Co_Combined_Catalog_2026.pdf?v=20260425';
+
 export default function Catalog() {
   const categoryCards = previewCategories.map((category) => {
     const lead = productsData[category]?.[0];
     return {
       id: category,
       label: categoryLabels[category],
-      image: lead?.hoverImage || lead?.image || '/site-images/optimized/catalog-hero.jpg',
+      flatImage: lead?.image || '/site-images/optimized/catalog-hero.jpg',
+      hoverImage: lead?.hoverImage || lead?.image || '/site-images/optimized/catalog-hero.jpg',
       subtitle:
         category === 'aloha-shirts'
           ? 'Camp shirts, polos, and matching programs.'
@@ -52,7 +55,7 @@ export default function Catalog() {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="/catalog.pdf"
+              href={catalogPdfHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-black transition-colors hover:bg-neutral-100"
@@ -60,7 +63,7 @@ export default function Catalog() {
               Open PDF
             </a>
             <a
-              href="/catalog.pdf"
+              href={catalogPdfHref}
               download
               className="inline-flex items-center justify-center border border-white px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-white transition-colors hover:bg-white hover:text-black"
             >
@@ -103,11 +106,19 @@ export default function Catalog() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {categoryCards.map((card) => (
               <article key={card.id} className="overflow-hidden border border-neutral-200 bg-white">
-                <div className="aspect-[4/5] overflow-hidden bg-[#fbfaf7]">
+                <div className="group relative aspect-[4/5] overflow-hidden bg-[#fbfaf7]">
                   <img
-                    src={card.image}
+                    src={card.flatImage}
                     alt={`${card.label} catalog preview`}
-                    className="h-full w-full object-contain p-6"
+                    className="absolute inset-0 h-full w-full object-contain p-6 transition duration-500 group-hover:scale-95 group-hover:opacity-0"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src={card.hoverImage}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-contain p-6 opacity-0 transition duration-500 group-hover:scale-100 group-hover:opacity-100 scale-105"
                     loading="lazy"
                     decoding="async"
                   />
@@ -200,7 +211,7 @@ export default function Catalog() {
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
-              href="/catalog.pdf"
+              href={catalogPdfHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-black transition-colors hover:bg-neutral-100"

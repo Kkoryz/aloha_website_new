@@ -61,7 +61,15 @@ function ProductTile({ product }: { product: Product }) {
         <img
           src={product.image}
           alt={product.name}
-          className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-95 sm:p-5"
+          className="absolute inset-0 h-full w-full object-contain p-3 transition duration-500 group-hover:scale-95 group-hover:opacity-0 sm:p-5"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src={product.hoverImage || product.image}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-contain p-3 opacity-0 transition duration-500 group-hover:scale-100 group-hover:opacity-100 sm:p-5 scale-105"
           loading="lazy"
           decoding="async"
         />
@@ -90,7 +98,7 @@ export default function Products() {
       <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="/products_hero.png"
+            src="/heroes/products_hero.png"
             alt="Resort Wear Collection"
             className="w-full h-full object-cover"
           />
@@ -159,8 +167,26 @@ export default function Products() {
               const lead = category.products[0];
               return (
                 <article key={category.id} className="border border-gray-200 bg-white">
-                  <a href={`#${category.id}`} className="block aspect-[16/11] overflow-hidden bg-[#fbfaf7]">
-                    {lead && <img src={lead.hoverImage || lead.image} alt={category.label} className="h-full w-full object-contain p-5 transition-transform duration-500 hover:scale-95" loading="lazy" decoding="async" />}
+                  <a href={`#${category.id}`} className="group relative block aspect-[16/11] overflow-hidden bg-[#fbfaf7]">
+                    {lead && (
+                      <>
+                        <img
+                          src={lead.image}
+                          alt={category.label}
+                          className="absolute inset-0 h-full w-full object-contain p-5 transition duration-500 group-hover:scale-95 group-hover:opacity-0"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <img
+                          src={lead.hoverImage || lead.image}
+                          alt=""
+                          aria-hidden="true"
+                          className="absolute inset-0 h-full w-full object-contain p-5 opacity-0 transition duration-500 group-hover:scale-100 group-hover:opacity-100 scale-105"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </>
+                    )}
                   </a>
                   <div className="p-6">
                     <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-gray-500">{category.eyebrow}</p>
@@ -215,8 +241,26 @@ export default function Products() {
                 </div>
 
                 <div>
-                  <div className="mb-4 aspect-[16/9] overflow-hidden bg-[#fbfaf7]">
-                    {lead && <img src={lead.hoverImage || lead.image} alt={`${category.title} lead style`} className="h-full w-full object-contain p-5 md:p-8" loading="lazy" decoding="async" />}
+                  <div className="group relative mb-4 aspect-[16/9] overflow-hidden bg-[#fbfaf7]">
+                    {lead && (
+                      <>
+                        <img
+                          src={lead.image}
+                          alt={`${category.title} lead style`}
+                          className="absolute inset-0 h-full w-full object-contain p-5 transition duration-500 group-hover:scale-95 group-hover:opacity-0 md:p-8"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <img
+                          src={lead.hoverImage || lead.image}
+                          alt=""
+                          aria-hidden="true"
+                          className="absolute inset-0 h-full w-full object-contain p-5 opacity-0 transition duration-500 group-hover:scale-100 group-hover:opacity-100 md:p-8 scale-105"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </>
+                    )}
                   </div>
                   <div className="grid grid-cols-2 gap-x-3 gap-y-8 sm:grid-cols-4 md:gap-x-5">
                     {featured.map((product) => (

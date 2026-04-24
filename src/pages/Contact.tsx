@@ -212,7 +212,7 @@ export default function Contact() {
       <section className="relative bg-[#f6f4ef] py-16 md:py-20">
         <div className="absolute inset-0 z-0 opacity-25">
           <img
-            src="/contact_hero.png"
+            src="/heroes/contact_hero.png"
             alt="Aloha & Co showroom and resort wear briefing table"
             className="h-full w-full object-cover"
             decoding="async"

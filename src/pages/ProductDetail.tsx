@@ -65,6 +65,9 @@ export default function ProductDetail() {
     'Customization: custom print, color, label, tag and packaging available',
   ];
   const heroImage = selectedImage || gallery[0]?.src || product.image;
+  const galleryImageScale = '';
+  const galleryButtonPadding = 'p-1';
+  const heroImageScale = '';
   const quoteHref = `/contact?style=${encodeURIComponent(product.id)}`;
   const whatsappHref = `https://wa.me/16475140926?text=${encodeURIComponent(
     `Hi Aloha & Co, I'm interested in style ${product.id}. Please share quote, MOQ, sample timing, and shipping options.`,
@@ -87,7 +90,7 @@ export default function ProductDetail() {
               <button
                 key={image.label}
                 onClick={() => setSelectedImage(image.src)}
-                className={`h-20 w-16 shrink-0 border bg-[#fbfaf7] p-1 transition-colors lg:h-24 lg:w-full ${
+                className={`h-20 w-16 shrink-0 overflow-hidden border bg-[#fbfaf7] transition-colors lg:h-24 lg:w-full ${galleryButtonPadding} ${
                   heroImage === image.src ? 'border-black' : 'border-neutral-300 hover:border-black'
                 }`}
                 aria-label={`Show ${image.label} image`}
@@ -95,7 +98,7 @@ export default function ProductDetail() {
                 <img
                   src={image.src}
                   alt={`${product.name} ${image.label}`}
-                  className="h-full w-full object-contain"
+                  className={`h-full w-full object-contain ${galleryImageScale}`}
                   loading="lazy"
                   decoding="async"
                 />
@@ -103,8 +106,13 @@ export default function ProductDetail() {
             ))}
           </div>
 
-          <div className="order-1 flex min-h-[520px] items-center justify-center bg-[#fbfaf7] lg:order-2">
-            <img src={heroImage} alt={product.name} className="max-h-[720px] w-full object-contain" decoding="async" />
+          <div className="order-1 flex min-h-[520px] items-center justify-center overflow-hidden bg-[#fbfaf7] lg:order-2">
+            <img
+              src={heroImage}
+              alt={product.name}
+              className={`max-h-[720px] w-full object-contain ${heroImageScale}`}
+              decoding="async"
+            />
           </div>
         </div>
 
@@ -221,7 +229,7 @@ export default function ProductDetail() {
               <div className="grid grid-cols-3 gap-3">
                 {related.map((item) => (
                   <Link to={`/product/${item.id}`} key={item.id} className="group text-center">
-                    <div className="relative aspect-[4/5] bg-[#fbfaf7] p-2">
+                    <div className="relative aspect-[4/5] overflow-hidden bg-[#fbfaf7] p-2">
                       <img
                         src={item.image}
                         alt={item.name}

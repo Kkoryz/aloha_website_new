@@ -1,20 +1,20 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import DeferredVideo from '../components/DeferredVideo';
 
 const heroImage = '/site-images/optimized/home-hero.jpg';
 const lookbookImages = [
-  {src: '/site-images/optimized/lookbook-pool.jpg', alt: 'Resort wear collection by the pool', pos: '50% 35%'},
-  {src: '/site-images/optimized/lookbook-tree.jpg', alt: 'Tropical resort apparel lifestyle scene'},
-  {src: '/site-images/optimized/lookbook-night.jpg', alt: 'Evening resort wear styling'},
-  {src: '/site-images/optimized/lookbook-drink.jpg', alt: 'Vacation-ready resort apparel detail'},
-  {src: '/site-images/optimized/lookbook-fruit.jpg', alt: 'Colorful resort styling inspiration'},
-  {src: '/site-images/optimized/lookbook-flower.jpg', alt: 'Floral resort wear mood image'},
-  {src: '/site-images/optimized/lookbook-pool2.jpg', alt: 'Swim and resort collection poolside scene', pos: '50% 35%'},
-  {src: '/site-images/optimized/lookbook-boat.jpg', alt: 'Boat-ready resort wear look'},
-  {src: '/site-images/optimized/lookbook-family.jpg', alt: 'Family matching resort wear collection'},
-  {src: '/site-images/optimized/lookbook-ocean.jpg', alt: 'Oceanfront resort lifestyle image'},
-  {src: '/site-images/optimized/lookbook-yoga.jpg', alt: 'Active resortwear and wellness image'},
-  {src: '/site-images/optimized/lookbook-chair.jpg', alt: 'Resort apparel styled at a vacation villa'},
+  { src: '/site-images/optimized/lookbook-pool.jpg', alt: 'Resort wear collection by the pool', pos: '50% 35%' },
+  { src: '/site-images/optimized/lookbook-tree.jpg', alt: 'Tropical resort apparel lifestyle scene' },
+  { src: '/site-images/optimized/lookbook-night.jpg', alt: 'Evening resort wear styling' },
+  { src: '/site-images/optimized/lookbook-drink.jpg', alt: 'Vacation-ready resort apparel detail' },
+  { src: '/site-images/optimized/lookbook-fruit.jpg', alt: 'Colorful resort styling inspiration' },
+  { src: '/site-images/optimized/lookbook-flower.jpg', alt: 'Floral resort wear mood image' },
+  { src: '/site-images/optimized/lookbook-pool2.jpg', alt: 'Swim and resort collection poolside scene', pos: '50% 35%' },
+  { src: '/site-images/optimized/lookbook-boat.jpg', alt: 'Boat-ready resort wear look' },
+  { src: '/site-images/optimized/lookbook-family.jpg', alt: 'Family matching resort wear collection' },
+  { src: '/site-images/optimized/lookbook-ocean.jpg', alt: 'Oceanfront resort lifestyle image' },
+  { src: '/site-images/optimized/lookbook-yoga.jpg', alt: 'Active resortwear and wellness image' },
+  { src: '/site-images/optimized/lookbook-chair.jpg', alt: 'Resort apparel styled at a vacation villa' },
 ];
 
 export default function Home() {
@@ -88,7 +88,7 @@ export default function Home() {
               <img
                 src={item.src}
                 alt={item.alt}
-                style={item.pos ? {objectPosition: item.pos} : undefined}
+                style={item.pos ? { objectPosition: item.pos } : undefined}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
                 decoding="async"
@@ -290,7 +290,7 @@ export default function Home() {
 
       <section className="bg-[#f4f4f4] py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 md:grid-cols-2 md:gap-16">
-          <div className="overflow-hidden border border-gray-200 bg-white p-8">
+          <div className="aspect-[4/5] overflow-hidden border border-gray-200 bg-white">
             <img
               src="/site-images/optimized/home-sustainability.jpg"
               alt="Aloha & Co Canada and China resort wear production team"

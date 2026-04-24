@@ -1,93 +1,102 @@
 import {Link} from 'react-router-dom';
 
 const starterKitItems = [
-  '"How to Start a Resort Line" guidebook',
-  'Resort fabric swatches and print planning notes',
-  'Full product catalog with 64+ base styles',
+  '"How to Start a Resort Line" guide',
+  'Fabric swatches and print notes',
+  'Catalog with 64+ base styles',
   '$50 sample voucher',
-  'Direct line to our Toronto client team',
-  'FOB and DDP shipping guidance',
+  'Toronto client team contact',
+  'FOB / DDP shipping guidance',
 ];
 
 const starterKitStrengths = [
   {
-    title: 'Start with less guesswork',
-    body: 'Use real fabric swatches, base styles, and sampling guidance before you spend on the wrong category or print direction.',
+    title: 'LESS GUESSWORK',
+    body: 'Review swatches, styles, and sample guidance before you commit budget.',
   },
   {
-    title: 'Custom print support in-house',
-    body: 'Our design team can turn references, sketches, or moodboards into exclusive repeat artwork built for resort wear garments.',
+    title: 'CUSTOM PRINTS',
+    body: 'We turn references and moodboards into production-ready repeat artwork.',
   },
   {
-    title: 'Launch path built for low MOQ',
-    body: 'Plan around 50 pcs per style per color, sample first, then scale into bulk only after the collection direction is working.',
+    title: 'LOW MOQ LAUNCH',
+    body: 'Start around 50 pcs per style per color after sample approval.',
   },
 ];
 
 const designAdvantages = [
-  'Exclusive pattern development from references, hand sketches, or moodboards',
-  'Print scaling adjusted by garment type, size range, and placement needs',
-  'Color matching and repeat cleanup before sampling starts',
-  'Production-ready artwork handoff for sampling and bulk',
+  'Exclusive prints from references, sketches, or moodboards',
+  'Print scale adjusted by garment and placement',
+  'Color matching and repeat cleanup before sampling',
+  'Artwork prepared for samples and bulk',
+];
+
+const bestFor = [
+  'First collection launches',
+  'Capsule resort drops',
+  'Low-MOQ testing',
+  'Print-led brands',
 ];
 
 export default function StarterKits() {
   return (
-    <div className="flex w-full flex-col bg-white text-black">
-      <section className="relative flex h-[50vh] items-center justify-center text-center">
+    <div className="flex w-full flex-col">
+      <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
-          <img src="/starter_kit_hero.png" alt="Starter Kit" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-black/45" />
+          <img src="/heroes/starter_kit_hero.png" alt="Starter Kit" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-        <div className="relative z-10 max-w-4xl px-4 text-white">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-6xl">Starter Kits</h1>
+        <div className="relative z-10 max-w-4xl px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+            Starter Kits
+          </h1>
           <p className="text-lg text-white/90">
-            A practical starting pack for brands planning their first resort wear collection.
+            A compact starting pack for brands planning their first resort wear collection.
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-24">
-        <div className="mx-auto max-w-6xl px-4">
+      <section className="bg-white px-4 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl">
           <div className="mb-12 max-w-3xl">
-            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-neutral-500">
-              Why Brands Ask For It
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">
+              Why It Helps
             </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
-              A starter pack that leads into real sampling and custom development.
+            <h2 className="text-3xl font-bold leading-tight md:text-4xl">
+              Everything needed to move from idea to first sample.
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {starterKitStrengths.map((item) => (
-              <article key={item.title} className="border border-neutral-200 p-8">
-                <h3 className="text-lg font-bold">{item.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-neutral-600">{item.body}</p>
-              </article>
+              <div key={item.title} className="flex flex-col border border-gray-200 p-8">
+                <h3 className="mb-4 text-lg font-bold">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-600">{item.body}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f4f4f4] py-20 md:py-24">
+      <section className="bg-[#f9f9f9] py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-4">
-          <div className="border border-neutral-200 bg-white p-10 text-center md:p-12">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-neutral-500">Starter Kit</p>
-            <h2 className="mt-3 text-3xl font-black md:text-4xl">Available on request</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-neutral-600">
-              We do not take payment online for the Starter Kit. Contact us with your category, launch stage, and print direction, and we will confirm the right starting pack and next steps.
+          <div className="border border-gray-200 bg-white p-8 text-center md:p-16">
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">Starter Kit</p>
+            <h2 className="mb-4 text-2xl font-bold md:mb-6 md:text-3xl">AVAILABLE ON REQUEST</h2>
+            <p className="mx-auto mb-8 max-w-2xl text-sm leading-relaxed text-gray-600 md:mb-10">
+              Tell us your category, launch stage, and print direction. We will confirm the right pack and next steps.
             </p>
-            <ul className="mx-auto mt-10 max-w-xl space-y-3 text-left text-sm text-neutral-700">
+            <ul className="mx-auto mb-10 max-w-md space-y-3 text-left text-sm text-gray-700 md:grid-cols-2">
               {starterKitItems.map((item) => (
                 <li key={item} className="flex items-start">
-                  <span className="mr-3 font-bold text-black">-</span>
-                  <span>{item}</span>
+                  <span className="mr-3 font-bold text-black">•</span>
+                  <span className="leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="flex flex-col justify-center gap-3 sm:flex-row">
               <Link
                 to="/contact?topic=starter-kit"
-                className="inline-flex items-center justify-center bg-black px-8 py-4 text-xs font-black uppercase tracking-[0.18em] text-white transition-colors hover:bg-neutral-800"
+                className="inline-flex w-full items-center justify-center bg-black px-8 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-gray-800 sm:w-auto"
               >
                 Request Starter Kit
               </Link>
@@ -95,7 +104,7 @@ export default function StarterKits() {
                 href="https://wa.me/16475140926"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center border border-black px-8 py-4 text-xs font-black uppercase tracking-[0.18em] transition-colors hover:bg-black hover:text-white"
+                className="inline-flex w-full items-center justify-center border border-black px-8 py-3 text-xs font-bold uppercase tracking-widest transition-colors hover:bg-black hover:text-white sm:w-auto"
               >
                 WhatsApp Us
               </a>
@@ -104,53 +113,33 @@ export default function StarterKits() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-24">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
+      <section className="bg-white py-16 md:py-24">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 px-4 md:grid-cols-2 md:gap-16">
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.24em] text-neutral-500">
-              In-House Design Team
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-gray-500">
+              Print Support
             </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
-              Custom patterns are one of the strongest reasons brands work with us early.
+            <h2 className="mb-6 text-3xl font-bold leading-tight md:text-4xl">
+              One team for fabrics, styles, and custom prints.
             </h2>
-            <p className="mt-6 text-sm leading-6 text-neutral-600">
-              We do more than supply base styles. Our design team helps translate your brand direction into exclusive prints that are usable in sampling and production, not just moodboard ideas.
+            <p className="mb-10 text-sm leading-relaxed text-gray-600">
+              We help turn brand references into prints that can move straight into sampling and bulk.
             </p>
+            <div>
+              <p className="mb-4 text-xs font-bold uppercase tracking-widest text-gray-500">Best For</p>
+              <ul className="list-inside list-disc space-y-2 text-sm text-gray-600">
+                {bestFor.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {designAdvantages.map((item) => (
-              <div key={item} className="border border-neutral-200 bg-[#fcfbf7] p-6">
-                <p className="text-sm leading-6 text-neutral-700">{item}</p>
+              <div key={item} className="flex items-center justify-center border border-gray-200 p-6 text-center">
+                <p className="w-full text-sm font-medium leading-relaxed text-gray-700">{item}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-black py-20 text-center text-white md:py-24">
-        <div className="mx-auto max-w-3xl px-4">
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-white/55">
-            Best Fit
-          </p>
-          <h2 className="mt-4 text-3xl font-black tracking-tight md:text-5xl">
-            Best for brands that want to move from idea to sample with more clarity.
-          </h2>
-          <p className="mt-6 text-sm leading-6 text-white/75">
-            If you already know you need fabric direction, base styles, custom print guidance, and a direct factory contact, the Starter Kit is the fastest way to begin the conversation.
-          </p>
-          <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link
-              to="/contact?topic=starter-kit"
-              className="inline-flex items-center justify-center bg-white px-8 py-3 text-xs font-black uppercase tracking-[0.18em] text-black transition-colors hover:bg-neutral-200"
-            >
-              Contact Us To Get It
-            </Link>
-            <Link
-              to="/catalog"
-              className="inline-flex items-center justify-center border border-white px-8 py-3 text-xs font-black uppercase tracking-[0.18em] transition-colors hover:bg-white hover:text-black"
-            >
-              View Catalog
-            </Link>
           </div>
         </div>
       </section>
