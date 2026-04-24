@@ -1,0 +1,30 @@
+# Aloha & Co
+
+> Factory-direct resort wear manufacturer focused on aloha shirts, resort dresses, swimwear, matching sets, accessories, private label development, custom print design, low MOQ sampling, and FOB/DDP shipping support.
+
+## Key Pages
+
+- [Home](https://alohaandco.com/)
+- [Catalog](https://alohaandco.com/catalog)
+- [Base Styles](https://alohaandco.com/shop)
+- [Product Lines](https://alohaandco.com/products)
+- [Starter Kits](https://alohaandco.com/starter-kits)
+- [Services](https://alohaandco.com/services)
+- [FAQ](https://alohaandco.com/faq)
+- [Help](https://alohaandco.com/help)
+- [Guidance](https://alohaandco.com/guidance)
+- [News](https://alohaandco.com/news)
+- [Contact](https://alohaandco.com/contact)
+
+## What Aloha & Co Helps With
+
+- Low MOQ sampling and bulk production for resort wear brands
+- In-house custom print and pattern development
+- Fabric sourcing out of Shaoxing / China Textile City
+- Private label trims, labels, and packaging
+- FOB, CIF, and DDP shipping guidance
+- Help resources, planning guidance, and market news for resort brands
+
+## Machine-Readable Index
+
+- https://alohaandco.com/sitemap.xml

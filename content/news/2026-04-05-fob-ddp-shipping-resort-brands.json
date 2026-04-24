@@ -1,0 +1,32 @@
+{
+  "slug": "fob-ddp-shipping-resort-brands",
+  "title": "FOB vs DDP: Choosing the Right Shipping Term for Resort Wear",
+  "excerpt": "FOB works well for brands with freight partners. DDP gives newer teams one landed price with duties, customs, and delivery included.",
+  "date": "2026-04-05",
+  "author": "Aloha and Co",
+  "image": "/site-images/services-hero-planning.png",
+  "category": "Logistics",
+  "sections": [
+    {
+      "id": "fob",
+      "title": "When FOB Makes Sense",
+      "paragraphs": [
+        "FOB is useful when a brand already has a freight forwarder and wants direct control over international shipping, consolidation, customs, and final delivery."
+      ]
+    },
+    {
+      "id": "ddp",
+      "title": "Why Many Startups Choose DDP",
+      "paragraphs": [
+        "DDP is often simpler for emerging brands because the quote includes tariff, customs handling, and door-to-door delivery. That makes landed cost easier to understand before production starts."
+      ]
+    },
+    {
+      "id": "quote-before-production",
+      "title": "Quote Before Production",
+      "paragraphs": [
+        "The best choice depends on destination, order size, timing, and the brand's internal logistics setup. Confirm shipping terms with the production quote so margin math stays clear."
+      ]
+    }
+  ]
+}

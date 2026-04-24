@@ -1,0 +1,32 @@
+{
+  "slug": "low-moq-resort-wear-testing",
+  "title": "Why Low MOQ Changes the Math for Resort Wear Brands",
+  "excerpt": "A 50 pcs per style per color MOQ lets brands test prints, categories, and price points before committing to deep inventory.",
+  "date": "2026-04-21",
+  "author": "Aloha and Co",
+  "image": "/site-images/services-card-sampling.png",
+  "category": "Manufacturing",
+  "sections": [
+    {
+      "id": "smarter-testing",
+      "title": "Smarter Print Testing",
+      "paragraphs": [
+        "Resort wear is print-led. A brand may love five artworks on screen, but the market decides which print deserves a larger production run. Starting at 50 pcs per style per color gives teams a practical way to test real demand without locking cash into one oversized order."
+      ]
+    },
+    {
+      "id": "the-250-unit-test",
+      "title": "The 250 Unit Test",
+      "paragraphs": [
+        "Many brands use a 250 unit test: five prints at 50 pcs each. This gives enough inventory for content, wholesale conversations, pop-ups, and early ecommerce testing while avoiding the 1,500+ unit commitment many generalist factories require."
+      ]
+    },
+    {
+      "id": "scale-after-proof",
+      "title": "Scale After Proof",
+      "paragraphs": [
+        "Once a print sells through, the next production decision becomes clearer. Reorder the winner, retire the weak performer, and use the data to brief the next collection."
+      ]
+    }
+  ]
+}

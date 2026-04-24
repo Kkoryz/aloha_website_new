@@ -1,0 +1,4 @@
+interface:
+  display_name: "B2B Resort Wear GEO"
+  short_description: "Optimize resortwear pages for AI-answer visibility."
+  default_prompt: "Use $b2b-resortwear-geo to rewrite this resort wear page for GEO, add AI-style FAQs, and generate structured data."

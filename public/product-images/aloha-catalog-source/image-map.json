@@ -1,0 +1,254 @@
+﻿[
+    {
+        "row":  3,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-03-col-05-03.jpeg",
+        "source":  "xl/media/image3.jpeg"
+    },
+    {
+        "row":  3,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-03-col-05-04.png",
+        "source":  "xl/media/image4.png"
+    },
+    {
+        "row":  5,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-05-col-05-27.jpeg",
+        "source":  "xl/media/image27.jpeg"
+    },
+    {
+        "row":  5,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-05-col-05-28.jpeg",
+        "source":  "xl/media/image28.jpeg"
+    },
+    {
+        "row":  9,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-09-col-04-01.png",
+        "source":  "xl/media/image1.png"
+    },
+    {
+        "row":  9,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-09-col-05-02.png",
+        "source":  "xl/media/image2.png"
+    },
+    {
+        "row":  10,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-10-col-05-15.png",
+        "source":  "xl/media/image15.png"
+    },
+    {
+        "row":  10,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-10-col-05-16.png",
+        "source":  "xl/media/image16.png"
+    },
+    {
+        "row":  12,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-12-col-05-05.jpeg",
+        "source":  "xl/media/image5.jpeg"
+    },
+    {
+        "row":  13,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-13-col-05-08.jpeg",
+        "source":  "xl/media/image8.jpeg"
+    },
+    {
+        "row":  14,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-14-col-05-07.jpeg",
+        "source":  "xl/media/image7.jpeg"
+    },
+    {
+        "row":  15,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-15-col-05-10.jpeg",
+        "source":  "xl/media/image10.jpeg"
+    },
+    {
+        "row":  16,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-16-col-05-09.png",
+        "source":  "xl/media/image9.png"
+    },
+    {
+        "row":  17,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-17-col-05-11.jpeg",
+        "source":  "xl/media/image11.jpeg"
+    },
+    {
+        "row":  18,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-18-col-05-13.jpeg",
+        "source":  "xl/media/image13.jpeg"
+    },
+    {
+        "row":  18,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-18-col-05-14.jpeg",
+        "source":  "xl/media/image14.jpeg"
+    },
+    {
+        "row":  19,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-19-col-05-33.jpeg",
+        "source":  "xl/media/image33.jpeg"
+    },
+    {
+        "row":  20,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-20-col-05-12.jpeg",
+        "source":  "xl/media/image12.jpeg"
+    },
+    {
+        "row":  21,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-21-col-05-06.jpeg",
+        "source":  "xl/media/image6.jpeg"
+    },
+    {
+        "row":  24,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-24-col-05-24.jpeg",
+        "source":  "xl/media/image24.jpeg"
+    },
+    {
+        "row":  24,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-24-col-05-26.jpeg",
+        "source":  "xl/media/image26.jpeg"
+    },
+    {
+        "row":  26,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-26-col-05-23.jpeg",
+        "source":  "xl/media/image23.jpeg"
+    },
+    {
+        "row":  27,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-27-col-05-25.jpeg",
+        "source":  "xl/media/image25.jpeg"
+    },
+    {
+        "row":  31,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-31-col-05-31.jpeg",
+        "source":  "xl/media/image31.jpeg"
+    },
+    {
+        "row":  32,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-32-col-05-34.jpeg",
+        "source":  "xl/media/image34.jpeg"
+    },
+    {
+        "row":  33,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-33-col-05-29.jpeg",
+        "source":  "xl/media/image29.jpeg"
+    },
+    {
+        "row":  33,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-33-col-05-30.jpeg",
+        "source":  "xl/media/image30.jpeg"
+    },
+    {
+        "row":  35,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-35-col-05-32.jpeg",
+        "source":  "xl/media/image32.jpeg"
+    },
+    {
+        "row":  41,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-41-col-05-17.jpeg",
+        "source":  "xl/media/image17.jpeg"
+    },
+    {
+        "row":  42,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-42-col-05-36.jpeg",
+        "source":  "xl/media/image36.jpeg"
+    },
+    {
+        "row":  43,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-43-col-05-35.jpeg",
+        "source":  "xl/media/image35.jpeg"
+    },
+    {
+        "row":  43,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-43-col-05-37.jpeg",
+        "source":  "xl/media/image37.jpeg"
+    },
+    {
+        "row":  44,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-44-col-04-38.jpeg",
+        "source":  "xl/media/image21.jpeg"
+    },
+    {
+        "row":  45,
+        "col":  5,
+        "file":  "/product-images/aloha-catalog-source/row-45-col-05-18.jpeg",
+        "source":  "xl/media/image18.jpeg"
+    },
+    {
+        "row":  46,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-46-col-04-19.jpeg",
+        "source":  "xl/media/image19.jpeg"
+    },
+    {
+        "row":  47,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-47-col-04-20.jpeg",
+        "source":  "xl/media/image20.jpeg"
+    },
+    {
+        "row":  48,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-48-col-04-21.jpeg",
+        "source":  "xl/media/image21.jpeg"
+    },
+    {
+        "row":  48,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-48-col-04-22.jpeg",
+        "source":  "xl/media/image22.jpeg"
+    },
+    {
+        "row":  51,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-51-col-04-42.jpeg",
+        "source":  "xl/media/image41.jpeg"
+    },
+    {
+        "row":  52,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-52-col-04-41.jpeg",
+        "source":  "xl/media/image40.jpeg"
+    },
+    {
+        "row":  53,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-53-col-04-40.jpeg",
+        "source":  "xl/media/image39.jpeg"
+    },
+    {
+        "row":  54,
+        "col":  4,
+        "file":  "/product-images/aloha-catalog-source/row-54-col-04-39.jpeg",
+        "source":  "xl/media/image38.jpeg"
+    }
+]
