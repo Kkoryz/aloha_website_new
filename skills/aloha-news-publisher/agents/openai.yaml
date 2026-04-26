@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aloha News Publisher"
+  short_description: "Publish one source-backed B2B news report."
+  default_prompt: "Use $aloha-news-publisher to research 5-10 current sources for today's strongest Aloha & Co keyword cluster, publish one concise buyer-facing news report, and run the news build."

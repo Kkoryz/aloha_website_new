@@ -55,7 +55,7 @@ export const categorySummaries: Record<string, string> = {
   'aloha-shirts': '20+ base styles | Rayon, cotton, linen, bamboo, polyester blends',
   'tshirts-tops': '15+ base styles | Cotton, bamboo, polyester, quick-dry blends',
   'resort-dresses': '12 base styles | Adult + girls shirt, polo, and sundress silhouettes',
-  'swimwear': '19+ base styles | Quick-dry poly, nylon-spandex, UPF50+',
+  'swimwear': '13 base styles | Quick-dry poly, nylon-spandex, UPF50+',
   'matching-sets': '16+ base styles | Coordinated family, couple and kids sets',
   'accessories': '15+ base styles | Hats, bags, bandanas, sarongs, towels',
 };
@@ -751,7 +751,7 @@ const resortDressReferenceSpecs: Record<string, ResortDressReferenceSpec> = {
 
 const resortDressAIImageVersion = '20260424-ai-ref1';
 const generatedResortImageVersion = 'v=20260424-dressrefs1';
-const swimBaseStyleAIImageVersion = '20260424-swimcatalogpdf2';
+const swimBaseStyleAIImageVersion = '20260426-restored1';
 const matchingSetBaseStyleAIImageVersion = '20260425-matchingrefs3';
 
 function resortDressAIImageOverride(id: string): Partial<Product> {
@@ -1101,7 +1101,6 @@ const productsDataSource: Record<string, Product[]> = {
     { id: 'RDK7001', name: 'Girls Rayon Shirt Dress', fabric: '100% Rayon / 130GSM', moq: 'MOQ 100', price: '$15', image: '/product-images/resort-generated/RDK7001-flat.png?v=20260422-resort1' }
   ],
   'swimwear': [
-    ...catalogSwimwearProducts,
     { id: 'SW1001', name: 'Classic Board Shorts', fabric: '100% Polyester / 130GSM', moq: 'MOQ 50', price: '$16', image: '/product-images/resort-generated/SW1001-flat.png?v=20260422-resort1' },
     { id: 'SWW2001', name: 'Classic One-Piece', fabric: '82/18 Poly-Spandex / 200GSM', moq: 'MOQ 50', price: '$22', image: '/product-images/resort-generated/SWW2001-flat.png?v=20260422-resort1' },
     { id: 'SW1201', name: 'Rash Guard UPF50+', fabric: '88/12 Poly-Spandex / 180GSM', moq: 'MOQ 50', price: '$18', image: '/product-images/resort-generated/SW1201-flat.png?v=20260422-resort1' },
@@ -1154,4 +1153,3 @@ export const productsData: Record<string, Product[]> = Object.fromEntries(
     )),
   ]),
 ) as Record<string, Product[]>;
-

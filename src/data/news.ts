@@ -55,7 +55,7 @@ function parseNewsDate(date: string) {
 }
 
 function resolveImage(category: string, image?: string) {
-  if (image && !image.startsWith('/news-images/')) {
+  if (image) {
     return image;
   }
 
