@@ -5,7 +5,7 @@ export default function BulkProduction() {
     <div className="flex flex-col w-full">
       <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
-          <img src="/heroes/bulk production.png" alt="Bulk Production" className="w-full h-full object-cover object-[center_15%]" />
+          <img src="/heroes/bulk production.webp" alt="Bulk Production" className="w-full h-full object-cover object-[center_15%]" />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         <div className="relative z-10 max-w-4xl px-4">

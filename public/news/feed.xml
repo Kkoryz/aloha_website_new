@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aloha &amp; Co News</title>
+    <link>https://alohaandco.com/news</link>
+    <atom:link href="https://alohaandco.com/news/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Buyer-facing market reports for resortwear founders and wholesale teams.</description>
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Apr 2026 21:35:41 GMT</lastBuildDate>
+    <item>
+      <title>2026 Swimwear and UPF Activewear Market Report for Resort Brands</title>
+      <link>https://alohaandco.com/news/swimwear-upf-activewear-market-report</link>
+      <guid isPermaLink="true">https://alohaandco.com/news/swimwear-upf-activewear-market-report</guid>
+      <pubDate>Sun, 26 Apr 2026 12:00:00 GMT</pubDate>
+      <description>A review of recent swimwear, UPF, and sustainable swim coverage shows buyers should plan smaller capsules around sport, coverage, texture, and material proof.</description>
+      <category>Market</category>
+    </item>
+    <item>
+      <title>Tariff Countdown and DDP Sourcing: A Landed-Cost Brief for Resort Brands</title>
+      <link>https://alohaandco.com/news/apparel-tariff-ddp-shipping-landed-cost-report</link>
+      <guid isPermaLink="true">https://alohaandco.com/news/apparel-tariff-ddp-shipping-landed-cost-report</guid>
+      <pubDate>Sun, 26 Apr 2026 12:00:00 GMT</pubDate>
+      <description>With Section 122 tariffs expiring July 24 and Section 301 hearings opening May 5, resortwear buyers need a tighter landed-cost discipline before the next sourcing cycle.</description>
+      <category>Shipping</category>
+    </item>
+    <item>
+      <title>What 7 Recent Swimwear Stories Say About the 2026 Resort Market</title>
+      <link>https://alohaandco.com/news/swimwear-market-signals-2026</link>
+      <guid isPermaLink="true">https://alohaandco.com/news/swimwear-market-signals-2026</guid>
+      <pubDate>Fri, 24 Apr 2026 12:00:00 GMT</pubDate>
+      <description>A cluster of recent trend reports, retail features, and brand launches suggests the 2026 swim market is splitting into minimalist, sporty, and print-led demand lanes.</description>
+      <category>Market</category>
+    </item>
+  </channel>
+</rss>

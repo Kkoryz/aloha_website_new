@@ -1,0 +1,93 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Aloha & Co News",
+  "home_page_url": "https://alohaandco.com/news",
+  "feed_url": "https://alohaandco.com/news/feed.json",
+  "description": "Buyer-facing market reports for resortwear founders and wholesale teams.",
+  "language": "en",
+  "icon": "https://alohaandco.com/favicon-512x512.png",
+  "favicon": "https://alohaandco.com/favicon.ico",
+  "authors": [
+    {
+      "name": "Aloha & Co",
+      "url": "https://alohaandco.com"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://alohaandco.com/news/swimwear-upf-activewear-market-report",
+      "url": "https://alohaandco.com/news/swimwear-upf-activewear-market-report",
+      "title": "2026 Swimwear and UPF Activewear Market Report for Resort Brands",
+      "summary": "A review of recent swimwear, UPF, and sustainable swim coverage shows buyers should plan smaller capsules around sport, coverage, texture, and material proof.",
+      "content_text": "Recent April 2026 swimwear coverage points to one useful buyer signal: resort swim is splitting into practical product lanes rather than a single seasonal look. Sport-inspired swim, tankini coverage, textured minimalism, recycled materials, and UPF rash guards each require different sampling and sourcing decisions.",
+      "image": "https://alohaandco.com/news-images/2026-04-26-swimwear-upf-activewear-market-report-ai-v2.png",
+      "banner_image": "https://alohaandco.com/news-images/2026-04-26-swimwear-upf-activewear-market-report-ai-v2.png",
+      "date_published": "2026-04-26T12:00:00.000Z",
+      "tags": [
+        "private label swimwear manufacturer",
+        "UPF50 activewear",
+        "rash guard manufacturing",
+        "resort swim capsule",
+        "sustainable swimwear",
+        "tankini manufacturing",
+        "custom swimwear",
+        "low MOQ swimwear"
+      ],
+      "authors": [
+        {
+          "name": "Aloha and Co"
+        }
+      ]
+    },
+    {
+      "id": "https://alohaandco.com/news/apparel-tariff-ddp-shipping-landed-cost-report",
+      "url": "https://alohaandco.com/news/apparel-tariff-ddp-shipping-landed-cost-report",
+      "title": "Tariff Countdown and DDP Sourcing: A Landed-Cost Brief for Resort Brands",
+      "summary": "With Section 122 tariffs expiring July 24 and Section 301 hearings opening May 5, resortwear buyers need a tighter landed-cost discipline before the next sourcing cycle.",
+      "content_text": "Recent April 2026 trade and freight coverage points to one buyer signal that matters for resortwear brands: landed cost is now the primary product decision. Section 122's 150-day clock, fresh Section 301 investigations across 16 economies, and softer-but-volatile ocean rates change how private-label buyers should plan FOB versus DDP, country mix, and production calendars.",
+      "image": "https://images.unsplash.com/photo-1670121180530-cfcba4438038?fm=jpg&q=80&w=2400&auto=format&fit=crop",
+      "banner_image": "https://images.unsplash.com/photo-1670121180530-cfcba4438038?fm=jpg&q=80&w=2400&auto=format&fit=crop",
+      "date_published": "2026-04-26T12:00:00.000Z",
+      "tags": [
+        "DDP shipping apparel",
+        "FOB garment sourcing",
+        "apparel landed cost",
+        "resortwear shipping",
+        "Section 122 tariff",
+        "Section 301 apparel",
+        "Vietnam apparel sourcing",
+        "Bangladesh garment sourcing",
+        "China apparel logistics"
+      ],
+      "authors": [
+        {
+          "name": "Aloha and Co"
+        }
+      ]
+    },
+    {
+      "id": "https://alohaandco.com/news/swimwear-market-signals-2026",
+      "url": "https://alohaandco.com/news/swimwear-market-signals-2026",
+      "title": "What 7 Recent Swimwear Stories Say About the 2026 Resort Market",
+      "summary": "A cluster of recent trend reports, retail features, and brand launches suggests the 2026 swim market is splitting into minimalist, sporty, and print-led demand lanes.",
+      "content_text": "Recent 2026 swimwear coverage points to a more segmented resort market than last season. Fashion editors are highlighting contrast trims, tankinis, surf-inspired silhouettes, floral prints, and destination-led capsules at the same time, while retail and sustainability coverage suggests fit, coverage, and material choice are still decisive. For resort brands, the opportunity is not to chase one trend headline, but to build a tighter line plan around three demand lanes and test them with disciplined product development.",
+      "image": "https://alohaandco.com/news-images/2026-04-24-swimwear-market-signals-2026-ai-v2.png",
+      "banner_image": "https://alohaandco.com/news-images/2026-04-24-swimwear-market-signals-2026-ai-v2.png",
+      "date_published": "2026-04-24T12:00:00.000Z",
+      "tags": [
+        "swimwear trends",
+        "resort market",
+        "tankini comeback",
+        "surf-inspired swim",
+        "print-led swimwear",
+        "destination retail",
+        "sustainable swimwear"
+      ],
+      "authors": [
+        {
+          "name": "Aloha and Co"
+        }
+      ]
+    }
+  ]
+}

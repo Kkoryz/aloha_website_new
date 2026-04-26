@@ -255,8 +255,12 @@ export default function Layout() {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Aloha & Co. All rights reserved.
+          <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col items-center gap-3 text-center text-xs text-gray-500 sm:flex-row sm:justify-between">
+            <span>&copy; {new Date().getFullYear()} Aloha & Co. All rights reserved.</span>
+            <span className="flex flex-wrap justify-center gap-4">
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
+            </span>
           </div>
         </div>
       </footer>

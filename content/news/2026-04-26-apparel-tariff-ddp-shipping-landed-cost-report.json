@@ -1,0 +1,126 @@
+{
+  "slug": "apparel-tariff-ddp-shipping-landed-cost-report",
+  "title": "Tariff Countdown and DDP Sourcing: A Landed-Cost Brief for Resort Brands",
+  "excerpt": "With Section 122 tariffs expiring July 24 and Section 301 hearings opening May 5, resortwear buyers need a tighter landed-cost discipline before the next sourcing cycle.",
+  "summary": "Recent April 2026 trade and freight coverage points to one buyer signal that matters for resortwear brands: landed cost is now the primary product decision. Section 122's 150-day clock, fresh Section 301 investigations across 16 economies, and softer-but-volatile ocean rates change how private-label buyers should plan FOB versus DDP, country mix, and production calendars.",
+  "date": "2026-04-26",
+  "author": "Aloha and Co",
+  "image": "https://images.unsplash.com/photo-1670121180530-cfcba4438038?fm=jpg&q=80&w=2400&auto=format&fit=crop",
+  "category": "Shipping",
+  "keyTakeaways": [
+    "The Section 122 global 10-15% tariff is set to expire July 24, 2026, but USTR Section 301 investigations covering China, Vietnam, Bangladesh, Cambodia, India and Mexico are queued to replace it, so buyers should not budget for a clean drop in landed cost.",
+    "Average U.S. apparel import duties hit roughly 35% in late 2025 according to FASH455 trade tracking, which makes country-of-origin and HTS classification a higher-leverage decision than freight rate negotiation.",
+    "Ocean rates remain range-bound for 2026 with periodic spikes from Suez detours and Middle East disruption, so resortwear buyers should plan a freight contingency rather than rely on the soft-rate headlines.",
+    "DDP from Asian factories can simplify cash flow but requires explicit invoice-value, HTS, and return-logistics terms. FOB still gives buyers control when tariff exposure shifts during the production window."
+  ],
+  "topics": [
+    "DDP shipping apparel",
+    "FOB garment sourcing",
+    "apparel landed cost",
+    "resortwear shipping",
+    "Section 122 tariff",
+    "Section 301 apparel",
+    "Vietnam apparel sourcing",
+    "Bangladesh garment sourcing",
+    "China apparel logistics"
+  ],
+  "sections": [
+    {
+      "id": "toc",
+      "title": "Table of Contents",
+      "paragraphs": [
+        "1. The strongest signal: landed cost is the new design constraint. 2. Section 122 expiration and Section 301 replacement risk. 3. What softer ocean rates do and do not solve. 4. FOB versus DDP discipline for resortwear capsules. 5. What resort brands should do before the next PO."
+      ]
+    },
+    {
+      "id": "market-signal",
+      "title": "The Strongest Signal: Landed Cost Is the New Design Constraint",
+      "paragraphs": [
+        "Trade reporting in March and April 2026 keeps returning to the same point: tariff layering is no longer a side note in apparel sourcing, it is the dominant cost variable. FASH455 trade tracking puts the average U.S. apparel import duty at roughly 35.1% in December 2025, up from 14.7% in January 2025. Business of Fashion's State of Fashion 2026 update describes a fashion industry that has already been rewired around U.S. trade policy rather than around traditional country-cost arbitrage.",
+        "For resortwear founders and wholesale buyers, this means landed cost has to be set before fabric, fit, or print decisions are locked. A capsule that pencils out at FOB Asia can lose its margin entirely once Section 122, MFN, and any layered Section 301 duties are applied to the destination port. The buyer question is no longer 'where can we make this cheaper' but 'what duty stack does this product carry into our wholesale channel.'"
+      ]
+    },
+    {
+      "id": "tariff-clock",
+      "title": "Section 122 Expiration and Section 301 Replacement Risk",
+      "paragraphs": [
+        "FreightFigures, Covington & Burling, and the Yale Budget Lab all describe the same calendar. The Section 122 global tariff, set at 10% and briefly raised toward the 15% statutory ceiling, is capped at 150 days and expires on July 24, 2026 unless Congress acts. Without a replacement, Section 122 simply lapses on that date. With a replacement, the import duty stack stays close to current levels.",
+        "The replacement signal has already been filed. USTR has opened Section 301 investigations into 16 economies covering nearly every major apparel sourcing destination, including China, Vietnam, Bangladesh, Cambodia, India, and Mexico. Public hearings are scheduled to begin on May 5, with outcomes expected by late July. For resortwear brands, the practical reading is that a planning model assuming free-and-clear July relief is too optimistic. Buyers should plan PO calendars under both scenarios: Section 122 lapses cleanly, or Section 301 duties step in before the apparel duty stack normalizes."
+      ]
+    },
+    {
+      "id": "freight-rates",
+      "title": "What Softer Ocean Rates Do and Do Not Solve",
+      "paragraphs": [
+        "iContainers and Hemisphere Freight describe 2026 ocean rates as range-bound, with periodic spikes from capacity withdrawals and geopolitical events. S&P Global and Freightos add that overcapacity, weaker post-Lunar New Year peak demand, and softer spot rates have created a buyer's market on paper. At the same time, Global Maritime Hub points to ongoing Middle East disruption, continued Suez detours, and two-year-high port congestion that quietly tighten effective vessel capacity.",
+        "Soft headline rates do not erase those frictions. Green surcharges sit at roughly $150 to $400 per container depending on the lane. For a small resortwear or swim capsule shipping in mixed or LCL containers, the per-unit freight saving from a quiet rate environment is real but modest, and a single delayed sailing can erase it. The freight planning takeaway is to lock booking lead time and a documented contingency lane, not to rely on the soft-rate narrative as a substitute for tariff planning."
+      ]
+    },
+    {
+      "id": "fob-vs-ddp",
+      "title": "FOB Versus DDP Discipline for Resortwear Capsules",
+      "paragraphs": [
+        "Alibaba.com seller guidance and DocShipper both stress that DDP terms only work cleanly when the supplier shares the declared invoice value, the intended HTS code, and a return-logistics policy in writing. SunGil Tex's tariff impact modeling shows how a one-percentage-point shift in Vietnam, Bangladesh, or China duty can move landed cost per yard meaningfully across a season's PO. Without those numbers, a DDP quote can hide tariff exposure that a brand only discovers at receiving.",
+        "FOB keeps tariff and duty exposure on the buyer side, which is harder operationally but gives a private-label brand control when duty structures move during the production window. For resortwear capsules with multiple silhouettes and trims, a hybrid is often cleaner: FOB for the styles where buyers want to actively manage country-of-origin and HTS classification, DDP only for replenishment basics where the supplier has a stable, documented duty pass-through."
+      ]
+    },
+    {
+      "id": "buyer-action",
+      "title": "What Resort Brands Should Do Before the Next PO",
+      "paragraphs": [
+        "The practical buyer response is a documented landed-cost workbook, not a single sourcing pivot. Each resortwear style needs a target FOB quote, a written HTS classification, a Section 122 duty line, a Section 301 contingency line, freight per unit at current ranges, and a small green-surcharge buffer. A capsule whose landed cost survives both 'Section 122 lapses' and 'Section 301 replaces' scenarios is a capsule that can ship into wholesale without surprise margin erosion.",
+        "For Aloha & Co's manufacturing lens, the relevance is direct. Tariff and freight volatility reshapes resortwear product development, fabric sourcing, low-MOQ sampling, and FOB versus DDP shipping decisions. A tighter landed-cost discipline lets founders and wholesale buyers move from a market signal to a sample order to a bulk PO with the duty stack already priced in, instead of discovered after the container clears."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "FreightFigures: Section 122 Tariff Expiration Countdown - What Importers Must Do Before July 24, 2026",
+      "url": "https://www.freightfigures.com/articles/section-122-tariff-expiration-countdown-july-2026"
+    },
+    {
+      "title": "Covington & Burling LLP: IEEPA Tariffs Terminated, Replacement Section 122 Tariffs Take Effect",
+      "url": "https://www.cov.com/en/news-and-insights/insights/2026/02/ieepa-tariffs-terminated-replacement-section-122-tariffs-take-effect"
+    },
+    {
+      "title": "Yale Budget Lab: State of U.S. Tariffs - February 21, 2026",
+      "url": "https://budgetlab.yale.edu/research/state-us-tariffs-february-21-2026"
+    },
+    {
+      "title": "FASH455 (Sheng Lu): Tariffs Impact U.S. Apparel Sourcing and Trade Beyond Just Price (Updated March 2026)",
+      "url": "https://shenglufashion.com/2026/03/09/tariffs-impact-u-s-apparel-sourcing-and-trade-beyond-just-price-updated-march-2026/"
+    },
+    {
+      "title": "Business of Fashion: Trump's Tariffs Have Already Rewired the Global Fashion Industry",
+      "url": "https://www.businessoffashion.com/articles/global-markets/the-state-of-fashion-2026-report-tariffs-trade-us-market/"
+    },
+    {
+      "title": "Supply Chain Dive: 4 Fashion Supply Chain Trends to Watch in 2026",
+      "url": "https://www.supplychaindive.com/news/fashion-supply-chains-2026-risks-and-trends/812006/"
+    },
+    {
+      "title": "iContainers: Freight Rate Forecast 2026 - Ocean, Air, Road & Rail Outlook",
+      "url": "https://www.icontainers.com/freight-rate-forecast-2026/"
+    },
+    {
+      "title": "Hemisphere Freight: Ocean Freight Rates in 2026",
+      "url": "https://www.hemisphere-freight.com/news/ocean-freight-rates-2026-outlook/"
+    },
+    {
+      "title": "Global Maritime Hub: Ocean Freight Rates Rise as Middle East Disruption Tightens Global Shipping Capacity",
+      "url": "https://globalmaritimehub.com/report-presentation/ocean-freight-rates-rise-as-middle-east-disruption-tightens-global-shipping-capacity"
+    },
+    {
+      "title": "SunGil Tex: Tariff Impact Calculator for Textile Sourcing in 2026 - Vietnam, Bangladesh, and China",
+      "url": "https://www.sungiltex.com/post/tariff-impact-calculator-for-textile-sourcing-in-2026-modeling-how-shifting-import-duties-across-vi"
+    },
+    {
+      "title": "Alibaba.com Seller: DDP Shipping Terms - The Complete Guide for Apparel Exporters",
+      "url": "https://seller.alibaba.com/blogs/2026/southeast-asia/apparel-accessories/ddp-shipping-terms-guide-alibaba-b2b"
+    },
+    {
+      "title": "Unsplash: Cargo ship at dock photograph by Nathan Cima",
+      "url": "https://unsplash.com/photos/MHXJ9p64Jw8"
+    }
+  ]
+}

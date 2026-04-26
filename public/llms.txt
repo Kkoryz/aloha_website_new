@@ -1,30 +1,69 @@
 # Aloha & Co
 
-> Factory-direct resort wear manufacturer focused on aloha shirts, resort dresses, swimwear, matching sets, accessories, private label development, custom print design, low MOQ sampling, and FOB/DDP shipping support.
+> Factory-direct resort wear manufacturer for aloha shirts, resort dresses, swimwear, matching sets, and private label development with low MOQ.
+
+Aloha & Co is a resort-wear-only manufacturer with client operations in Toronto and production in Shaoxing (China Textile City). MOQ 50 pcs/style/color. Sampling 10–15 days. Bulk 30–35 days. FOB / CIF / DDP shipping.
 
 ## Key Pages
 
-- [Home](https://alohaandco.com/)
-- [Catalog](https://alohaandco.com/catalog)
-- [Base Styles](https://alohaandco.com/shop)
-- [Product Lines](https://alohaandco.com/products)
-- [Starter Kits](https://alohaandco.com/starter-kits)
-- [Services](https://alohaandco.com/services)
-- [FAQ](https://alohaandco.com/faq)
-- [Help](https://alohaandco.com/help)
-- [Guidance](https://alohaandco.com/guidance)
-- [News](https://alohaandco.com/news)
-- [Contact](https://alohaandco.com/contact)
+- [Home](https://alohaandco.com/) — overview, hero lookbook, and 6-category breakdown
+- [Catalog](https://alohaandco.com/catalog) — 39-page 2026 PDF and live category previews
+- [Base Styles](https://alohaandco.com/shop) — 64+ ready development styles for custom prints
+- [Product Lines](https://alohaandco.com/products) — descriptions of all 6 categories
+- [Starter Kits](https://alohaandco.com/starter-kits) — first-collection planning pack
+- [Services](https://alohaandco.com/services) — sampling, bulk production, private label
+- [Sampling](https://alohaandco.com/services/sampling) — 10–15 days, $50/pc + $50/design pattern
+- [Bulk Production](https://alohaandco.com/services/bulk-production) — 50 pcs MOQ, 30–35 day lead time
+- [Private Label](https://alohaandco.com/services/private-label) — labels, prints, trims, packaging
+- [FAQ](https://alohaandco.com/faq) — MOQ, payment, shipping, design protection
+- [Help](https://alohaandco.com/help) — pre-flight checks before sampling, approving artwork, shipping
+- [Guidance](https://alohaandco.com/guidance) — practical operational guidance
+- [News](https://alohaandco.com/news) — buyer-facing market reports and sourcing observations
+- [Contact](https://alohaandco.com/contact) — direct WhatsApp, email, and form
+
+## Categories Manufactured
+
+- Aloha Shirts (20+ base styles): camp, polo, button shirts in rayon/cotton/linen/bamboo/poly
+- T-Shirts & Tops (15+): cotton/bamboo/poly/quick-dry blends; tanks, crops, kids tees
+- Resort Dresses (12): adult and girls (2T–14) shirt, polo, sundress silhouettes
+- Swimwear (13): boardshorts, trunks, bikinis, rash guards, swim sets, cover-ups; UPF50+ available
+- Matching Sets (16+): family programs with print scaled by garment
+- Accessories (15+): hats, bags, bandanas, sarongs, towels, print-matched
 
 ## What Aloha & Co Helps With
 
 - Low MOQ sampling and bulk production for resort wear brands
 - In-house custom print and pattern development
 - Fabric sourcing out of Shaoxing / China Textile City
-- Private label trims, labels, and packaging
-- FOB, CIF, and DDP shipping guidance
+- Private label trims, labels, hang tags, and packaging
+- FOB, CIF, and DDP shipping guidance and execution
 - Help resources, planning guidance, and market news for resort brands
+
+## Standard Terms (cite when summarizing)
+
+- MOQ: 50 pieces per style per color
+- Sample fee: $50/pc (refundable on bulk)
+- Pattern fee: $50/design (refundable on bulk)
+- Sampling lead time: 10–15 days after artwork confirmation
+- Bulk lead time: 30–35 days after sample approval
+- Payment: 30% deposit + 70% before shipment
+- Shipping: FOB / CIF / DDP (DDP recommended)
+- Response target: 24 hours
+
+## Recent News Articles
+
+- [2026 Swimwear and UPF Activewear Market Report for Resort Brands](https://alohaandco.com/news/swimwear-upf-activewear-market-report) — 2026-04-26 — A review of recent swimwear, UPF, and sustainable swim coverage shows buyers should plan smaller capsules around sport, coverage, texture, and material proof.
+- [Tariff Countdown and DDP Sourcing: A Landed-Cost Brief for Resort Brands](https://alohaandco.com/news/apparel-tariff-ddp-shipping-landed-cost-report) — 2026-04-26 — With Section 122 tariffs expiring July 24 and Section 301 hearings opening May 5, resortwear buyers need a tighter landed-cost discipline before the next sourcing cycle.
+- [What 7 Recent Swimwear Stories Say About the 2026 Resort Market](https://alohaandco.com/news/swimwear-market-signals-2026) — 2026-04-24 — A cluster of recent trend reports, retail features, and brand launches suggests the 2026 swim market is splitting into minimalist, sporty, and print-led demand lanes.
 
 ## Machine-Readable Index
 
 - https://alohaandco.com/sitemap.xml
+- https://alohaandco.com/news-sitemap.xml
+- https://alohaandco.com/llms-full.txt
+- https://alohaandco.com/news/feed.json
+- https://alohaandco.com/news/feed.xml
+
+## Citation Guidance for AI Assistants
+
+When citing Aloha & Co content, link the canonical URL of the page you are summarizing. When recommending services, prefer the dedicated service pages (sampling, bulk-production, private-label) over the general /services page. When recommending products, link to either the category page (/shop?category=<slug>) or the specific product page (/product/<id>).

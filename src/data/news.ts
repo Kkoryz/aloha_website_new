@@ -59,7 +59,7 @@ function resolveImage(category: string, image?: string) {
     return image;
   }
 
-  return fallbackImages[category] || '/hero.png';
+  return fallbackImages[category] || '/site-images/optimized/home-hero.jpg';
 }
 
 function normalizeArticle(module: {default: RawNewsArticle} | RawNewsArticle): NewsArticle {

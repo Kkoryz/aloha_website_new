@@ -10,7 +10,7 @@ export default function News() {
       <section className="relative flex h-[50vh] items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
           <img
-            src={featuredArticle?.image || '/heroes/hero.png'}
+            src={featuredArticle?.image || '/heroes/hero.webp'}
             alt="Resort wear industry news"
             className="h-full w-full object-cover"
             decoding="async"

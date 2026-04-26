@@ -101,7 +101,7 @@ export default function Shop() {
       {/* Hero */}
       <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
-          <img src="/heroes/shop_hero.png" alt="Shop Hero" className="w-full h-full object-cover" />
+          <img src="/heroes/shop_hero.webp" alt="Shop Hero" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative z-10 max-w-4xl px-4">

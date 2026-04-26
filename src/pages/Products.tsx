@@ -98,7 +98,7 @@ export default function Products() {
       <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="/heroes/products_hero.png"
+            src="/heroes/products_hero.webp"
             alt="Resort Wear Collection"
             className="w-full h-full object-cover"
           />

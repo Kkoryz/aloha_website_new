@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
-    "build:news": "node scripts/build-news.cjs",
+    "build": "vite build && tsx scripts/dump-products-for-seo.ts && node scripts/build-seo.cjs",
+    "build:news": "node scripts/build-news.cjs && tsx scripts/dump-products-for-seo.ts && node scripts/build-seo.cjs",
+    "build:seo": "tsx scripts/dump-products-for-seo.ts && node scripts/build-seo.cjs",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"

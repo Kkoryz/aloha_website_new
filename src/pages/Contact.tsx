@@ -160,6 +160,12 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmissionState(null);
 
+    const trimmedName = formData.name.trim();
+    const trimmedEmail = formData.email.trim();
+    const trimmedMessage = formData.message.trim();
+    const trimmedCompany = formData.company.trim();
+    const subject = `Aloha & Co — Inquiry from ${trimmedName}${inquirySeed.label ? ` (${inquirySeed.label})` : ''}`;
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -169,10 +175,16 @@ export default function Contact() {
         },
         body: JSON.stringify({
           access_key: web3FormsAccessKey,
-          company: formData.company.trim(),
-          email: formData.email.trim(),
-          message: formData.message.trim(),
-          name: formData.name.trim(),
+          subject,
+          from_name: trimmedName ? `${trimmedName} (alohaandco.com)` : 'alohaandco.com Contact Form',
+          replyto: trimmedEmail,
+          inquiry_type: inquirySeed.label || 'General',
+          source_page: typeof window !== 'undefined' ? window.location.href : 'https://alohaandco.com/contact',
+          company: trimmedCompany,
+          email: trimmedEmail,
+          message: trimmedMessage,
+          name: trimmedName,
+          botcheck: '',
         }),
       });
 
@@ -212,7 +224,7 @@ export default function Contact() {
       <section className="relative bg-[#f6f4ef] py-16 md:py-20">
         <div className="absolute inset-0 z-0 opacity-25">
           <img
-            src="/heroes/contact_hero.png"
+            src="/heroes/contact_hero.webp"
             alt="Aloha & Co showroom and resort wear briefing table"
             className="h-full w-full object-cover"
             decoding="async"

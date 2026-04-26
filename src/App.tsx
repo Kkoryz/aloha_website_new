@@ -23,6 +23,9 @@ const Help = lazy(() => import('./pages/Help'));
 const Guidance = lazy(() => import('./pages/Guidance'));
 const News = lazy(() => import('./pages/News'));
 const NewsArticle = lazy(() => import('./pages/NewsArticle'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function RouteFallback() {
   return (
@@ -64,7 +67,10 @@ export default function App() {
           <Route path="guidance" element={<LazyPage><Guidance /></LazyPage>} />
           <Route path="news" element={<LazyPage><News /></LazyPage>} />
           <Route path="news/:slug" element={<LazyPage><NewsArticle /></LazyPage>} />
+          <Route path="privacy" element={<LazyPage><Privacy /></LazyPage>} />
+          <Route path="terms" element={<LazyPage><Terms /></LazyPage>} />
           <Route path="signin" element={<Navigate to="/contact" replace />} />
+          <Route path="*" element={<LazyPage><NotFound /></LazyPage>} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -16,7 +16,7 @@ Use this skill to publish a daily batch of current industry news for Aloha & Co.
 - Theme rule: one report uses one keyword cluster from `references/site-keywords.md`.
 - CMS path: `content/news/YYYY-MM-DD-slug.json`.
 - Featured image: use an AI-generated local PNG by default at `/news-images/YYYY-MM-DD-slug.png`. Do not rely on Unsplash hotlinks for production publishing.
-- Build command after writing JSON and images: `npm run build:news`.
+- Build command after writing JSON and images: `npm run build:news` (this also chains `build:seo`, which regenerates SEO/GEO assets).
 
 ## Non-Negotiables
 
@@ -96,14 +96,26 @@ Create one AI hero image for the report using `references/hero-image-style.md`. 
 
 The image must look like editorial manufacturing imagery for resortwear or swimwear, not a generic business illustration. Do not use logos or readable brand names from sourced companies. Avoid Unsplash direct URLs because they can 404, redirect through anti-bot pages, or change without notice.
 
-### 6. Validate and Build
+### 6. Validate, Build, and Regenerate SEO/GEO Assets
 
 After all JSON and image files are written:
 
 ```bash
-npm run build:news
-npm run lint
+npm run build:news    # validates article JSON, then runs build:seo
+npm run lint          # tsc --noEmit
+npm run build         # vite build → dist, then build:seo mirrors SEO outputs into dist/
 ```
+
+`build:seo` regenerates everything an AI crawler or search engine needs:
+
+- `public/sitemap.xml` — full URL list with per-article `<lastmod>`
+- `public/news-sitemap.xml` — Google News sitemap protocol
+- `public/llms.txt` — concise AI overview with article list
+- `public/llms-full.txt` — long-form AI citation file (full article body, takeaways, sources)
+- `public/news/feed.json` (JSON Feed 1.1) and `public/news/feed.xml` (RSS 2.0)
+- `public/news/<slug>/index.html` — prerendered static HTML per article with full meta tags, NewsArticle + BreadcrumbList JSON-LD, and visible article body. AI bots that don't run JS still see the full content. SPA hydrates over it for human visitors.
+- `public/news/index.html` — prerendered news listing
+- `public/robots.txt` — explicit allow-list for GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended, Applebot-Extended, etc.
 
 If `npm run lint` is unrelatedly broken, report that clearly and preserve the generated news files.
 

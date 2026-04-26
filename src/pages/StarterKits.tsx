@@ -43,7 +43,7 @@ export default function StarterKits() {
     <div className="flex w-full flex-col">
       <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
-          <img src="/heroes/starter_kit_hero.png" alt="Starter Kit" className="w-full h-full object-cover" />
+          <img src="/heroes/starter_kit_hero.webp" alt="Starter Kit" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 max-w-4xl px-4">
