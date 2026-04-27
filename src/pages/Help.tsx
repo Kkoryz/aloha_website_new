@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 import {BookOpenText, CircleHelp, FileSearch, Newspaper} from 'lucide-react';
+import Picture from '../components/Picture';
 
 const quickLinks = [
   {
@@ -60,11 +61,12 @@ export default function Help() {
     <div className="w-full bg-[#fcfbf7] text-black">
       <section className="relative flex h-[50vh] items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
-          <img
+          <Picture
             src="/site-images/optimized/home-guides.jpg"
             alt="Help center for resort wear brands"
             className="h-full w-full object-cover"
-            decoding="async"
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-black/55" />
         </div>

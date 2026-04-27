@@ -12,10 +12,30 @@ const here = dirname(fileURLToPath(import.meta.url));
 const out = resolve(here, 'products-dump.json');
 mkdirSync(dirname(out), { recursive: true });
 
-const flat: Array<{ id: string; category: string; name: string; image?: string }> = [];
+const flat: Array<{
+  id: string;
+  category: string;
+  name: string;
+  fabric: string;
+  moq: string;
+  price?: string;
+  sizeRange?: string;
+  image?: string;
+  flatImage?: string;
+}> = [];
 for (const [category, items] of Object.entries(productsData)) {
   for (const p of items) {
-    flat.push({ id: p.id, category, name: p.name, image: p.hoverImage || p.image });
+    flat.push({
+      id: p.id,
+      category,
+      name: p.name,
+      fabric: p.fabric,
+      moq: p.moq,
+      price: p.price,
+      sizeRange: p.sizeRange,
+      image: p.hoverImage || p.image,
+      flatImage: p.image,
+    });
   }
 }
 

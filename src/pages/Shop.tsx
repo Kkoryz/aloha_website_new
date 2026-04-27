@@ -7,6 +7,7 @@ import {
   productsData,
   type Product,
 } from '../data/products';
+import { productPath } from '../lib/productSlug';
 
 type ProductWithCategory = Product & { category: string };
 const categoryOrder = Object.keys(categoryLabels);
@@ -18,7 +19,7 @@ function ProductCard({ product }: { product: Product }) {
 
   return (
     <Link
-      to={`/product/${product.id}`}
+      to={productPath(product)}
       className="group block text-center"
       aria-label={`View ${product.name}`}
     >
@@ -63,26 +64,37 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function Shop() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get('category');
+  const queryParam = searchParams.get('q') || '';
   const [activeCategory, setActiveCategory] = useState<string>(categoryParam || 'all');
+  const [searchQuery, setSearchQuery] = useState<string>(queryParam);
 
   useEffect(() => {
     setActiveCategory(categoryParam || 'all');
   }, [categoryParam]);
 
-  const products = useMemo<ProductWithCategory[]>(() => {
-    if (activeCategory === 'all') {
-      return Object.entries(productsData).flatMap(([category, items]) =>
-        items.map((product) => ({ ...product, category })),
-      );
-    }
+  useEffect(() => {
+    setSearchQuery(queryParam);
+  }, [queryParam]);
 
-    return (productsData[activeCategory] || []).map((product) => ({
-      ...product,
-      category: activeCategory,
-    }));
-  }, [activeCategory]);
+  const products = useMemo<ProductWithCategory[]>(() => {
+    const base: ProductWithCategory[] = activeCategory === 'all'
+      ? Object.entries(productsData).flatMap(([category, items]) =>
+          items.map((product) => ({ ...product, category })),
+        )
+      : (productsData[activeCategory] || []).map((product) => ({
+          ...product,
+          category: activeCategory,
+        }));
+
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return base;
+    return base.filter((product) => {
+      const haystack = `${product.id} ${product.name} ${product.fabric} ${categoryLabels[product.category] || ''}`.toLowerCase();
+      return haystack.includes(q);
+    });
+  }, [activeCategory, searchQuery]);
 
   const activeTitle = activeCategory === 'all' ? 'All Base Styles' : categoryLabels[activeCategory];
   const productById = useMemo(() => new Map(products.map((product) => [product.id, product])), [products]);
@@ -128,7 +140,7 @@ export default function Shop() {
         <div className="flex gap-8 md:gap-12 overflow-x-auto border-b border-neutral-200 py-8 lg:justify-center scrollbar-hide">
           <button
             onClick={() => setActiveCategory('all')}
-            className={`shrink-0 text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-colors hover:text-black pb-3 border-b-2 ${
+            className={`shrink-0 min-h-[44px] flex items-center text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-colors hover:text-black pb-3 border-b-2 ${
               activeCategory === 'all'
                 ? 'border-black text-black'
                 : 'border-transparent text-gray-400'
@@ -140,7 +152,7 @@ export default function Shop() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`shrink-0 text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-colors hover:text-black pb-3 border-b-2 ${
+              className={`shrink-0 min-h-[44px] flex items-center text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-colors hover:text-black pb-3 border-b-2 ${
                 activeCategory === category
                   ? 'border-black text-black'
                   : 'border-transparent text-gray-400'
@@ -151,9 +163,24 @@ export default function Shop() {
           ))}
         </div>
 
-        <div className="flex items-center justify-between py-5 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-500">
+        <div className="flex flex-wrap items-center justify-between gap-3 py-5 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-500">
           <span>{products.length} products</span>
-          <span>{activeTitle}</span>
+          {searchQuery ? (
+            <button
+              type="button"
+              onClick={() => {
+                const next = new URLSearchParams(searchParams);
+                next.delete('q');
+                setSearchParams(next);
+                setSearchQuery('');
+              }}
+              className="inline-flex min-h-[36px] items-center gap-2 border border-black bg-black px-3 py-1 text-white"
+            >
+              Search: “{searchQuery}” ×
+            </button>
+          ) : (
+            <span>{activeTitle}</span>
+          )}
         </div>
 
         {activeCategory === 'all' ? (

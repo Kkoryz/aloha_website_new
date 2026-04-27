@@ -3,498 +3,913 @@
     "id": "XLSX-03",
     "category": "aloha-shirts",
     "name": "Polyester Aloha Polo",
-    "image": "/product-images/aloha-generated/XLSX-03-model.png?v=20260423-ai-ref2"
+    "fabric": "95%polyester 5%spandex / 190GSM / knitted",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-03-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-03-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-04",
     "category": "aloha-shirts",
     "name": "Polyester Aloha Polo",
-    "image": "/product-images/aloha-generated/XLSX-04-model.png?v=20260423-ai-ref2"
+    "fabric": "95%polyester 5%spandex / 190GSM / knitted",
+    "moq": "MOQ 50",
+    "price": "as low as $11",
+    "sizeRange": "12M-12T",
+    "image": "/product-images/aloha-generated/XLSX-04-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-04-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-05",
     "category": "aloha-shirts",
     "name": "Polyester Aloha Polo",
-    "image": "/product-images/aloha-generated/XLSX-05-model.png?v=20260423-ai-ref2"
+    "fabric": "95%polyester 5%spandex / 190GSM / knitted",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-05-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-05-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-06",
     "category": "aloha-shirts",
     "name": "Polyester Aloha Shirt",
-    "image": "/product-images/aloha-generated/XLSX-06-model.png?v=20260422-clean2"
+    "fabric": "100%polyester / 150GSM / weaven",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-06-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-06-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-09",
     "category": "aloha-shirts",
     "name": "Smooth Woven Camp Shirt",
-    "image": "/product-images/aloha-generated/XLSX-09-model.png?v=20260422-clean2"
+    "fabric": "100% Polyester / 130GSM / Woven Smooth",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-09-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-09-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-10",
     "category": "aloha-shirts",
     "name": "Knitted Polo Shirt",
-    "image": "/product-images/aloha-generated/XLSX-10-model.png?v=20260422-clean2"
+    "fabric": "95%polyester 5%spandex / 190GSM / KINTTED",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-10-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-10-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-24",
     "category": "aloha-shirts",
     "name": "Structured Hawaiian Shirt",
-    "image": "/product-images/aloha-generated/XLSX-24-model.png?v=20260423-ai-ref2"
+    "fabric": "95% Polyester 5% Spandex / 190GSM / Knitted",
+    "moq": "MOQ 50",
+    "price": "as low as $16",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-24-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-24-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-25",
     "category": "aloha-shirts",
     "name": "Rayon Hawaiian Shirt",
-    "image": "/product-images/aloha-generated/XLSX-25-model.png?v=20260423-ai-ref2"
+    "fabric": "95% Polyester 5% Spandex / 190GSM / Knitted",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-25-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-25-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-26",
     "category": "aloha-shirts",
     "name": "Smooth Woven Shirt",
-    "image": "/product-images/aloha-generated/XLSX-26-model.png?v=20260423-ai-ref2"
+    "fabric": "95% Polyester 5% Spandex / 190GSM / Knitted",
+    "moq": "MOQ 50",
+    "price": "as low as $11",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-26-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-26-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-27",
     "category": "aloha-shirts",
     "name": "Stretch Hawaiian Shirt",
-    "image": "/product-images/aloha-generated/XLSX-27-model.png?v=20260423-ai-ref2"
+    "fabric": "95% Polyester 5% Spandex / 155GSM / weaven",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-27-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-27-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-31",
     "category": "aloha-shirts",
     "name": "Knitted Polo Shirt",
-    "image": "/product-images/aloha-generated/XLSX-31-model.png?v=20260423-ai-ref2"
+    "fabric": "95% Polyester 5% Spandex / 190GSM / Knitted",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-31-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-31-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-32",
     "category": "aloha-shirts",
     "name": "Knitted Polo Shirt",
-    "image": "/product-images/aloha-generated/XLSX-32-model.png?v=20260423-ai-ref2"
+    "fabric": "95% Polyester 5% Spandex / 190GSM / Knitted",
+    "moq": "MOQ 50",
+    "price": "as low as $11",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-32-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-32-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-33",
     "category": "aloha-shirts",
     "name": "Smooth Woven Shirt",
-    "image": "/product-images/aloha-generated/XLSX-33-model.png?v=20260423-ai-ref2"
+    "fabric": "100% Polyester / 150GSM / weaving",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-33-model.png?v=20260423-ai-ref2",
+    "flatImage": "/product-images/aloha-generated/XLSX-33-flat.png?v=20260423-ai-ref2"
   },
   {
     "id": "XLSX-11",
     "category": "tshirts-tops",
     "name": "Crinkle Chiffon Blouse",
-    "image": "/product-images/aloha-generated/XLSX-11-model.png?v=20260422-clean2"
+    "fabric": "100% Polyester / 100GSM / Crinkle Chiffon",
+    "moq": "MOQ 50",
+    "price": "as low as $14",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/aloha-generated/XLSX-11-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-11-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-19",
     "category": "tshirts-tops",
     "name": "Scarf Top",
-    "image": "/product-images/aloha-generated/XLSX-19-model.png?v=20260422-clean2"
+    "fabric": "95%polyester 5%spandex / 190GSM / weaven",
+    "moq": "MOQ 50",
+    "price": "as low as $16",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/aloha-generated/XLSX-19-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-19-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-41",
     "category": "tshirts-tops",
     "name": "Quick-Dry Knitted Top",
-    "image": "/product-images/aloha-generated/XLSX-41-model.png?v=20260422-clean2"
+    "fabric": "95%polyester 5%spandex / 190GSM / knitted polyester",
+    "moq": "MOQ 50",
+    "price": "as low as $9",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-41-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-41-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-42",
     "category": "tshirts-tops",
     "name": "T-Shirt",
-    "image": "/product-images/aloha-generated/XLSX-42-model.png?v=20260422-clean2"
+    "fabric": "100%cotton / 210GSM / cotton",
+    "moq": "MOQ 50",
+    "price": "as low as $9",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-42-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-42-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-43",
     "category": "tshirts-tops",
     "name": "T-Shirt",
-    "image": "/product-images/aloha-generated/XLSX-43-model.png?v=20260422-clean2"
+    "fabric": "100%cotton / 210GSM / cotton",
+    "moq": "MOQ 50",
+    "price": "as low as $8",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-43-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-43-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-44",
     "category": "tshirts-tops",
     "name": "T-Shirt",
-    "image": "/product-images/aloha-generated/XLSX-44-model.png?v=20260422-clean2"
+    "fabric": "100%cotton / 210GSM / cotton",
+    "moq": "MOQ 50",
+    "price": "as low as $7",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-44-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-44-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-45",
     "category": "tshirts-tops",
     "name": "Quick-Dry Knitted T-Shirt",
-    "image": "/product-images/aloha-generated/XLSX-45-model.png?v=20260422-clean2"
+    "fabric": "95%polyester 6%spandex / 190GSM / knitted polyester",
+    "moq": "MOQ 50",
+    "price": "as low as $7",
+    "sizeRange": "12M-12T",
+    "image": "/product-images/aloha-generated/XLSX-45-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-45-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-46",
     "category": "tshirts-tops",
     "name": "T-Shirt",
-    "image": "/product-images/aloha-generated/XLSX-46-model.png?v=20260422-clean2"
+    "fabric": "100%cotton / 210GSM / cotton",
+    "moq": "MOQ 50",
+    "price": "as low as $9",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-46-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-46-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-47",
     "category": "tshirts-tops",
     "name": "T-Shirt",
-    "image": "/product-images/aloha-generated/XLSX-47-model.png?v=20260422-clean2"
+    "fabric": "100%cotton / 210GSM / cotton",
+    "moq": "MOQ 50",
+    "price": "as low as $9",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-47-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-47-flat.png?v=20260422-clean2"
   },
   {
     "id": "XLSX-48",
     "category": "tshirts-tops",
     "name": "T-Shirt",
-    "image": "/product-images/aloha-generated/XLSX-48-model.png?v=20260422-clean2"
+    "fabric": "100%cotton / 210GSM / cotton",
+    "moq": "MOQ 50",
+    "price": "as low as $9",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/XLSX-48-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/XLSX-48-flat.png?v=20260422-clean2"
   },
   {
     "id": "AL1212",
     "category": "tshirts-tops",
     "name": "Knitted DTY T-Shirt",
-    "image": "/product-images/aloha-generated/AL1212-model.png?v=20260422-clean2"
+    "fabric": "95% Polyester 5%spandex / 150GSM / Knitted DTY",
+    "moq": "MOQ 50",
+    "price": "as low as $11",
+    "sizeRange": "S-7XL",
+    "image": "/product-images/aloha-generated/AL1212-model.png?v=20260422-clean2",
+    "flatImage": "/product-images/aloha-generated/AL1212-flat.png?v=20260422-clean2"
   },
   {
     "id": "TS1001",
     "category": "tshirts-tops",
     "name": "Classic Cotton Tee",
-    "image": "/product-images/resort-generated/TS1001-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 180GSM",
+    "moq": "MOQ 50",
+    "price": "$12",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/resort-generated/TS1001-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TS1001-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TS1002",
     "category": "tshirts-tops",
     "name": "Heavyweight Cotton Tee",
-    "image": "/product-images/resort-generated/TS1002-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 250GSM",
+    "moq": "MOQ 50",
+    "price": "$15",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/resort-generated/TS1002-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TS1002-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TS1004",
     "category": "tshirts-tops",
     "name": "Quick-Dry Sports Tee",
-    "image": "/product-images/resort-generated/TS1004-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Polyester / 140GSM",
+    "moq": "MOQ 50",
+    "price": "$14",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/resort-generated/TS1004-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TS1004-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TS1201",
     "category": "tshirts-tops",
     "name": "Cotton Tank Top",
-    "image": "/product-images/resort-generated/TS1201-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 180GSM",
+    "moq": "MOQ 50",
+    "price": "$10",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/resort-generated/TS1201-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TS1201-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TS1006",
     "category": "tshirts-tops",
     "name": "Acid Wash Vintage Tee",
-    "image": "/product-images/resort-generated/TS1006-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 250GSM",
+    "moq": "MOQ 50",
+    "price": "$16",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/resort-generated/TS1006-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TS1006-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TS1401",
     "category": "tshirts-tops",
     "name": "Cotton Henley Tee",
-    "image": "/product-images/resort-generated/TS1401-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 200GSM",
+    "moq": "MOQ 50",
+    "price": "$14",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/resort-generated/TS1401-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TS1401-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TS1301",
     "category": "tshirts-tops",
     "name": "Classic Long Sleeve Tee",
-    "image": "/product-images/resort-generated/TS1301-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 200GSM",
+    "moq": "MOQ 50",
+    "price": "$15",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/resort-generated/TS1301-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TS1301-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TSW2001",
     "category": "tshirts-tops",
     "name": "Classic Cotton Tee",
-    "image": "/product-images/resort-generated/TSW2001-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 160GSM",
+    "moq": "MOQ 50",
+    "price": "$12",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-generated/TSW2001-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TSW2001-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TSW2002",
     "category": "tshirts-tops",
     "name": "Cropped Cotton Tee",
-    "image": "/product-images/resort-generated/TSW2002-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 180GSM",
+    "moq": "MOQ 50",
+    "price": "$13",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-generated/TSW2002-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TSW2002-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TSW2003",
     "category": "tshirts-tops",
     "name": "Bamboo Blend Tee",
-    "image": "/product-images/resort-generated/TSW2003-model.png?v=20260424-dressrefs1"
+    "fabric": "70/30 Bamboo-Cotton / 160GSM",
+    "moq": "MOQ 50",
+    "price": "$16",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-generated/TSW2003-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TSW2003-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TSW2202",
     "category": "tshirts-tops",
     "name": "Racerback Sports Tank",
-    "image": "/product-images/resort-generated/TSW2202-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Polyester / 140GSM",
+    "moq": "MOQ 50",
+    "price": "$11",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-generated/TSW2202-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TSW2202-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TSK7001",
     "category": "tshirts-tops",
     "name": "Kids Cotton Tee",
-    "image": "/product-images/resort-generated/TSK7001-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 160GSM",
+    "moq": "MOQ 100",
+    "price": "$8",
+    "sizeRange": "2T-14",
+    "image": "/product-images/resort-generated/TSK7001-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TSK7001-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TSK7002",
     "category": "tshirts-tops",
     "name": "Kids Quick-Dry Tee",
-    "image": "/product-images/resort-generated/TSK7002-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Polyester / 130GSM",
+    "moq": "MOQ 100",
+    "price": "$9",
+    "sizeRange": "2T-14",
+    "image": "/product-images/resort-generated/TSK7002-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TSK7002-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "TSK7003",
     "category": "tshirts-tops",
     "name": "Kids Cotton Tank",
-    "image": "/product-images/resort-generated/TSK7003-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 160GSM",
+    "moq": "MOQ 100",
+    "price": "$7",
+    "sizeRange": "2T-14",
+    "image": "/product-images/resort-generated/TSK7003-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/TSK7003-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "RD1102",
     "category": "resort-dresses",
     "name": "Knitted Stretch Polo Dress",
-    "image": "/product-images/resort-ai-generated/RD1102-model.png?v=20260424-ai-ref1"
+    "fabric": "92/8 Poly-Spandex / 160GSM",
+    "moq": "MOQ 50",
+    "price": "$21",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-ai-generated/RD1102-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RD1102-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RD1003",
     "category": "resort-dresses",
     "name": "Smooth Polyester Shirt Dress",
-    "image": "/product-images/resort-ai-generated/RD1003-model.png?v=20260424-ai-ref1"
+    "fabric": "100% Polyester / 130GSM",
+    "moq": "MOQ 50",
+    "price": "$20",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-ai-generated/RD1003-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RD1003-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RDK7002",
     "category": "resort-dresses",
     "name": "Girls Cotton Poplin Dress",
-    "image": "/product-images/resort-ai-generated/RDK7002-model.png?v=20260424-ai-ref1"
+    "fabric": "100% Cotton Poplin / 150GSM",
+    "moq": "MOQ 100",
+    "price": "$16",
+    "sizeRange": "2T-14",
+    "image": "/product-images/resort-ai-generated/RDK7002-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RDK7002-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RD1401",
     "category": "resort-dresses",
     "name": "Rayon Midi Sundress",
-    "image": "/product-images/resort-ai-generated/RD1401-model.png?v=20260424-ai-ref1"
+    "fabric": "100% Rayon / 130GSM",
+    "moq": "MOQ 50",
+    "price": "$22",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-ai-generated/RD1401-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RD1401-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RD1001",
     "category": "resort-dresses",
     "name": "Rayon Shirt Dress",
-    "image": "/product-images/resort-ai-generated/RD1001-model.png?v=20260424-ai-ref1"
+    "fabric": "100% Rayon / 140GSM",
+    "moq": "MOQ 50",
+    "price": "$24",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-ai-generated/RD1001-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RD1001-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RDK7101",
     "category": "resort-dresses",
     "name": "Girls Knitted Polo Dress",
-    "image": "/product-images/resort-ai-generated/RDK7101-model.png?v=20260424-ai-ref1"
+    "fabric": "100% Polyester / 145GSM",
+    "moq": "MOQ 100",
+    "price": "$16",
+    "sizeRange": "2T-14",
+    "image": "/product-images/resort-ai-generated/RDK7101-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RDK7101-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RD1103",
     "category": "resort-dresses",
     "name": "Rayon Polo Dress",
-    "image": "/product-images/resort-ai-generated/RD1103-model.png?v=20260424-ai-ref1"
+    "fabric": "100% Rayon / 140GSM",
+    "moq": "MOQ 50",
+    "price": "$23",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-ai-generated/RD1103-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RD1103-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RD1004",
     "category": "resort-dresses",
     "name": "Stretch Poplin Shirt Dress",
-    "image": "/product-images/resort-ai-generated/RD1004-model.png?v=20260424-ai-ref1"
+    "fabric": "97/3 Cotton-Spandex / 155GSM",
+    "moq": "MOQ 50",
+    "price": "$23",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-ai-generated/RD1004-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RD1004-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RDK7201",
     "category": "resort-dresses",
     "name": "Girls Rayon Sundress",
-    "image": "/product-images/resort-ai-generated/RDK7201-model.png?v=20260424-ai-ref1"
+    "fabric": "100% Rayon / 130GSM",
+    "moq": "MOQ 100",
+    "price": "$14",
+    "sizeRange": "2T-14",
+    "image": "/product-images/resort-ai-generated/RDK7201-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RDK7201-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RD1101",
     "category": "resort-dresses",
     "name": "Knitted DTY Polo Dress",
-    "image": "/product-images/resort-ai-generated/RD1101-model.png?v=20260424-ai-ref1"
+    "fabric": "100% Polyester / 150GSM",
+    "moq": "MOQ 50",
+    "price": "$22",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/resort-ai-generated/RD1101-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RD1101-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RDK7102",
     "category": "resort-dresses",
     "name": "Girls Knitted Stretch Polo Dress",
-    "image": "/product-images/resort-ai-generated/RDK7102-model.png?v=20260424-ai-ref1"
+    "fabric": "92/8 Poly-Spandex / 155GSM",
+    "moq": "MOQ 100",
+    "price": "$15",
+    "sizeRange": "2T-14",
+    "image": "/product-images/resort-ai-generated/RDK7102-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RDK7102-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "RDK7001",
     "category": "resort-dresses",
     "name": "Girls Rayon Shirt Dress",
-    "image": "/product-images/resort-ai-generated/RDK7001-model.png?v=20260424-ai-ref1"
+    "fabric": "100% Rayon / 130GSM",
+    "moq": "MOQ 100",
+    "price": "$15",
+    "sizeRange": "2T-14",
+    "image": "/product-images/resort-ai-generated/RDK7001-model.png?v=20260424-ai-ref1",
+    "flatImage": "/product-images/resort-ai-generated/RDK7001-flat.png?v=20260424-ai-ref1"
   },
   {
     "id": "SW1001",
     "category": "swimwear",
     "name": "Classic Board Shorts",
-    "image": "/product-images/base-styles/swimwear/SW1001-model.png?v=20260426-restored1"
+    "fabric": "100% Polyester / 130GSM",
+    "moq": "MOQ 50",
+    "price": "$16",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/base-styles/swimwear/SW1001-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SW1001-flat.png?v=20260426-restored1"
   },
   {
     "id": "SWW2001",
     "category": "swimwear",
     "name": "Classic One-Piece",
-    "image": "/product-images/base-styles/swimwear/SWW2001-model.png?v=20260426-restored1"
+    "fabric": "82/18 Poly-Spandex / 200GSM",
+    "moq": "MOQ 50",
+    "price": "$22",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/base-styles/swimwear/SWW2001-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SWW2001-flat.png?v=20260426-restored1"
   },
   {
     "id": "SW1201",
     "category": "swimwear",
     "name": "Rash Guard UPF50+",
-    "image": "/product-images/base-styles/swimwear/SW1201-model.png?v=20260426-restored1"
+    "fabric": "88/12 Poly-Spandex / 180GSM",
+    "moq": "MOQ 50",
+    "price": "$18",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/base-styles/swimwear/SW1201-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SW1201-flat.png?v=20260426-restored1"
   },
   {
     "id": "SWW2201",
     "category": "swimwear",
     "name": "Chiffon Sarong Cover-Up",
-    "image": "/product-images/base-styles/swimwear/SWW2201-model.png?v=20260426-restored1"
+    "fabric": "100% Polyester / 80GSM",
+    "moq": "MOQ 50",
+    "price": "$14",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/base-styles/swimwear/SWW2201-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SWW2201-flat.png?v=20260426-restored1"
   },
   {
     "id": "SW1002",
     "category": "swimwear",
     "name": "Stretch Board Shorts",
-    "image": "/product-images/base-styles/swimwear/SW1002-model.png?v=20260426-restored1"
+    "fabric": "92/8 Poly-Spandex / 140GSM",
+    "moq": "MOQ 50",
+    "price": "$18",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/base-styles/swimwear/SW1002-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SW1002-flat.png?v=20260426-restored1"
   },
   {
     "id": "SW1101",
     "category": "swimwear",
     "name": "Mesh-Lined Swim Trunks",
-    "image": "/product-images/base-styles/swimwear/SW1101-model.png?v=20260426-restored1"
+    "fabric": "100% Polyester / 120GSM",
+    "moq": "MOQ 50",
+    "price": "$15",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/base-styles/swimwear/SW1101-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SW1101-flat.png?v=20260426-restored1"
   },
   {
     "id": "SWW2101",
     "category": "swimwear",
     "name": "Classic Print Bikini",
-    "image": "/product-images/base-styles/swimwear/SWW2101-model.png?v=20260426-restored1"
+    "fabric": "82/18 Poly-Spandex / 190GSM",
+    "moq": "MOQ 50",
+    "price": "$20",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/base-styles/swimwear/SWW2101-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SWW2101-flat.png?v=20260426-restored1"
   },
   {
     "id": "SWW2301",
     "category": "swimwear",
     "name": "L/S Rash Guard UPF50+",
-    "image": "/product-images/base-styles/swimwear/SWW2301-model.png?v=20260426-restored1"
+    "fabric": "88/12 Poly-Spandex / 180GSM",
+    "moq": "MOQ 50",
+    "price": "$20",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/base-styles/swimwear/SWW2301-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SWW2301-flat.png?v=20260426-restored1"
   },
   {
     "id": "SWK7001",
     "category": "swimwear",
     "name": "Kids Board Shorts",
-    "image": "/product-images/base-styles/swimwear/SWK7001-model.png?v=20260426-restored1"
+    "fabric": "100% Polyester / 120GSM",
+    "moq": "MOQ 100",
+    "price": "$10",
+    "sizeRange": "2T-14",
+    "image": "/product-images/base-styles/swimwear/SWK7001-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SWK7001-flat.png?v=20260426-restored1"
   },
   {
     "id": "SWK7002",
     "category": "swimwear",
     "name": "Kids Rash Guard UPF50+",
-    "image": "/product-images/base-styles/swimwear/SWK7002-model.png?v=20260426-restored1"
+    "fabric": "88/12 Poly-Spandex / 170GSM",
+    "moq": "MOQ 100",
+    "price": "$12",
+    "sizeRange": "2T-14",
+    "image": "/product-images/base-styles/swimwear/SWK7002-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SWK7002-flat.png?v=20260426-restored1"
   },
   {
     "id": "SWK7003",
     "category": "swimwear",
     "name": "Kids Swim Set (Top+Bottom)",
-    "image": "/product-images/base-styles/swimwear/SWK7003-model.png?v=20260426-restored1"
+    "fabric": "82/18 Poly-Spandex / 190GSM",
+    "moq": "MOQ 100",
+    "price": "$14",
+    "sizeRange": "2T-14",
+    "image": "/product-images/base-styles/swimwear/SWK7003-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SWK7003-flat.png?v=20260426-restored1"
   },
   {
     "id": "SW4001",
     "category": "swimwear",
     "name": "UPF50+ Long Sleeve Rash Guard",
-    "image": "/product-images/base-styles/swimwear/SW4001-model.png?v=20260426-restored1"
+    "fabric": "88% Poly 12% Spandex, 200GSM",
+    "moq": "MOQ 50",
+    "price": "$22",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/base-styles/swimwear/SW4001-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SW4001-flat.png?v=20260426-restored1"
   },
   {
     "id": "SW6002",
     "category": "swimwear",
     "name": "Girls One Piece Swimsuit",
-    "image": "/product-images/base-styles/swimwear/SW6002-model.png?v=20260426-restored1"
+    "fabric": "82% Nylon 18% Spandex, 190GSM",
+    "moq": "MOQ 100",
+    "price": "$16",
+    "sizeRange": "2T-14",
+    "image": "/product-images/base-styles/swimwear/SW6002-model.png?v=20260426-restored1",
+    "flatImage": "/product-images/base-styles/swimwear/SW6002-flat.png?v=20260426-restored1"
   },
   {
     "id": "MS1001",
     "category": "matching-sets",
     "name": "Rayon Shirt + Shorts",
-    "image": "/product-images/base-styles/matching-sets/MS1001-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Rayon / 140GSM",
+    "moq": "MOQ 50",
+    "price": "$28",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/base-styles/matching-sets/MS1001-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MS1001-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MSW2001",
     "category": "matching-sets",
     "name": "Rayon Top + Shorts",
-    "image": "/product-images/base-styles/matching-sets/MSW2001-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Rayon / 130GSM",
+    "moq": "MOQ 50",
+    "price": "$26",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/base-styles/matching-sets/MSW2001-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MSW2001-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MSF9001",
     "category": "matching-sets",
     "name": "Family Aloha Set",
-    "image": "/product-images/base-styles/matching-sets/MSF9001-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Rayon / 135GSM",
+    "moq": "MOQ 100",
+    "price": "$45",
+    "sizeRange": "Family XS-4XL / Kids 2T-14",
+    "image": "/product-images/base-styles/matching-sets/MSF9001-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MSF9001-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MS1101",
     "category": "matching-sets",
     "name": "Knitted DTY Polo + Shorts",
-    "image": "/product-images/base-styles/matching-sets/MS1101-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Polyester / 150GSM",
+    "moq": "MOQ 50",
+    "price": "$30",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/base-styles/matching-sets/MS1101-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MS1101-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MS1003",
     "category": "matching-sets",
     "name": "Polyester Shirt + Shorts",
-    "image": "/product-images/base-styles/matching-sets/MS1003-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Polyester / 130GSM",
+    "moq": "MOQ 50",
+    "price": "$25",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/base-styles/matching-sets/MS1003-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MS1003-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MS1002",
     "category": "matching-sets",
     "name": "Cotton Poplin Shirt + Shorts",
-    "image": "/product-images/base-styles/matching-sets/MS1002-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Cotton Poplin / 160GSM",
+    "moq": "MOQ 50",
+    "price": "$28",
+    "sizeRange": "S-3XL",
+    "image": "/product-images/base-styles/matching-sets/MS1002-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MS1002-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MSW2002",
     "category": "matching-sets",
     "name": "Chiffon Top + Shorts",
-    "image": "/product-images/base-styles/matching-sets/MSW2002-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Polyester / 100GSM",
+    "moq": "MOQ 50",
+    "price": "$24",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/base-styles/matching-sets/MSW2002-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MSW2002-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MSW2101",
     "category": "matching-sets",
     "name": "Rayon Top + Skirt",
-    "image": "/product-images/base-styles/matching-sets/MSW2101-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Rayon / 130GSM",
+    "moq": "MOQ 50",
+    "price": "$26",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/base-styles/matching-sets/MSW2101-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MSW2101-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MSW2102",
     "category": "matching-sets",
     "name": "Viscose Top + Wrap Skirt",
-    "image": "/product-images/base-styles/matching-sets/MSW2102-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Viscose / 125GSM",
+    "moq": "MOQ 50",
+    "price": "$27",
+    "sizeRange": "XS-4XL",
+    "image": "/product-images/base-styles/matching-sets/MSW2102-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MSW2102-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MSK7001",
     "category": "matching-sets",
     "name": "Kids Shirt + Shorts",
-    "image": "/product-images/base-styles/matching-sets/MSK7001-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Rayon / 130GSM",
+    "moq": "MOQ 100",
+    "price": "$18",
+    "sizeRange": "2T-14",
+    "image": "/product-images/base-styles/matching-sets/MSK7001-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MSK7001-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MSF9002",
     "category": "matching-sets",
     "name": "Polyester Family Set",
-    "image": "/product-images/base-styles/matching-sets/MSF9002-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Polyester / 125GSM",
+    "moq": "MOQ 100",
+    "price": "$42",
+    "sizeRange": "Family XS-4XL / Kids 2T-14",
+    "image": "/product-images/base-styles/matching-sets/MSF9002-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MSF9002-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "MSK7002",
     "category": "matching-sets",
     "name": "Kids Quick-Dry Set",
-    "image": "/product-images/base-styles/matching-sets/MSK7002-model.png?v=20260425-matchingrefs3"
+    "fabric": "100% Polyester / 120GSM",
+    "moq": "MOQ 100",
+    "price": "$16",
+    "sizeRange": "2T-14",
+    "image": "/product-images/base-styles/matching-sets/MSK7002-model.png?v=20260425-matchingrefs3",
+    "flatImage": "/product-images/base-styles/matching-sets/MSK7002-flat.png?v=20260425-matchingrefs3"
   },
   {
     "id": "AC1001",
     "category": "accessories",
     "name": "Rayon Bucket Hat",
-    "image": "/product-images/resort-generated/AC1001-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Rayon / 140GSM",
+    "moq": "MOQ 100",
+    "price": "$8",
+    "sizeRange": "One Size",
+    "image": "/product-images/resort-generated/AC1001-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/AC1001-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "AC1201",
     "category": "accessories",
     "name": "Canvas Aloha Tote",
-    "image": "/product-images/resort-generated/AC1201-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton Canvas / 300GSM",
+    "moq": "MOQ 200",
+    "price": "$10",
+    "sizeRange": "One Size",
+    "image": "/product-images/resort-generated/AC1201-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/AC1201-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "AC1301",
     "category": "accessories",
     "name": "Rayon Aloha Bandana",
-    "image": "/product-images/resort-generated/AC1301-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Rayon / 100GSM",
+    "moq": "MOQ 200",
+    "price": "$5",
+    "sizeRange": "One Size",
+    "image": "/product-images/resort-generated/AC1301-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/AC1301-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "AC1101",
     "category": "accessories",
     "name": "Cotton Aloha Cap",
-    "image": "/product-images/resort-generated/AC1101-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton Twill / 200GSM",
+    "moq": "MOQ 200",
+    "price": "$7",
+    "sizeRange": "One Size",
+    "image": "/product-images/resort-generated/AC1101-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/AC1101-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "AC1003",
     "category": "accessories",
     "name": "Quick-Dry Bucket Hat",
-    "image": "/product-images/resort-generated/AC1003-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Polyester / 120GSM",
+    "moq": "MOQ 100",
+    "price": "$9",
+    "sizeRange": "One Size",
+    "image": "/product-images/resort-generated/AC1003-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/AC1003-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "AC1002",
     "category": "accessories",
     "name": "Cotton Bucket Hat",
-    "image": "/product-images/resort-generated/AC1002-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Cotton / 160GSM",
+    "moq": "MOQ 100",
+    "price": "$8",
+    "sizeRange": "One Size",
+    "image": "/product-images/resort-generated/AC1002-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/AC1002-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "AC1401",
     "category": "accessories",
     "name": "Rayon Scrunchie",
-    "image": "/product-images/resort-generated/AC1401-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Rayon / 140GSM",
+    "moq": "MOQ 300",
+    "price": "$3",
+    "sizeRange": "One Size",
+    "image": "/product-images/resort-generated/AC1401-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/AC1401-flat.png?v=20260424-dressrefs1"
   },
   {
     "id": "AC1302",
     "category": "accessories",
     "name": "Chiffon Aloha Scarf",
-    "image": "/product-images/resort-generated/AC1302-model.png?v=20260424-dressrefs1"
+    "fabric": "100% Polyester / 80GSM",
+    "moq": "MOQ 200",
+    "price": "$6",
+    "sizeRange": "One Size",
+    "image": "/product-images/resort-generated/AC1302-model.png?v=20260424-dressrefs1",
+    "flatImage": "/product-images/resort-generated/AC1302-flat.png?v=20260424-dressrefs1"
   }
 ]

@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import type { Product } from '../data/products';
+import { productPath } from '../lib/productSlug';
 
 const SITE_NAME = 'Aloha & Co';
 const SITE_URL = 'https://alohaandco.com';
 const DEFAULT_IMAGE = '/site-images/optimized/home-hero.jpg';
 const DEFAULT_DESCRIPTION =
-  'Factory-direct resort wear manufacturer for aloha shirts, resort dresses, swimwear, matching sets, and private label development with low MOQ (50 pcs/style/color).';
+  'Factory-direct resort wear manufacturer. 64+ base styles, custom prints, MOQ 50, sampling 10–15 days, FOB / DDP shipping from Shaoxing.';
 const DEFAULT_KEYWORDS = [
   'resort wear manufacturer',
   'aloha shirt manufacturer',
@@ -71,6 +72,7 @@ type SeoPayload = {
   keywords?: string[];
   title: string;
   type?: 'article' | 'product' | 'website';
+  canonicalPath?: string;
 };
 
 function toAbsoluteUrl(pathOrUrl?: string) {
@@ -181,7 +183,7 @@ function faqJsonLd() {
 
 function buildDefaultPayload(): SeoPayload {
   return {
-    title: `${SITE_NAME} | Resort Wear Manufacturer for Low MOQ Private Label Production`,
+    title: `${SITE_NAME} | Resort Wear Manufacturer (MOQ 50)`,
     description: DEFAULT_DESCRIPTION,
     image: DEFAULT_IMAGE,
     keywords: DEFAULT_KEYWORDS,
@@ -197,6 +199,7 @@ function buildDefaultPayload(): SeoPayload {
         inLanguage: 'en',
         publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
       },
+      faqJsonLd(),
     ],
   };
 }
@@ -205,6 +208,7 @@ function buildProductPayload(product: Product & { category: string }): SeoPayloa
   const numericPrice = product.price?.match(/\d+(?:\.\d+)?/)?.[0];
   const description = `${product.name} in ${product.fabric}. ${product.moq}${product.sizeRange ? `, ${product.sizeRange}` : ''}. Custom print, labeling, and bulk production available.`;
   const categoryLabel = categoryLabels[product.category] || product.category;
+  const canonicalPath = productPath(product);
 
   return {
     title: `${product.name} (${product.id}) | ${categoryLabel} | ${SITE_NAME}`,
@@ -219,12 +223,15 @@ function buildProductPayload(product: Product & { category: string }): SeoPayloa
       `style ${product.id}`,
     ],
     type: 'product',
+    canonicalPath,
     jsonLd: [
       {
         '@context': 'https://schema.org',
         '@type': 'Product',
         name: product.name,
         sku: product.id,
+        mpn: product.id,
+        url: `${SITE_URL}${canonicalPath}`,
         description,
         image: [toAbsoluteUrl(product.hoverImage || product.image)],
         brand: {
@@ -247,6 +254,7 @@ function buildProductPayload(product: Product & { category: string }): SeoPayloa
                 priceCurrency: 'USD',
                 price: numericPrice,
                 availability: 'https://schema.org/InStock',
+                url: `${SITE_URL}${canonicalPath}`,
                 seller: { '@type': 'Organization', name: SITE_NAME },
               },
             }
@@ -256,7 +264,7 @@ function buildProductPayload(product: Product & { category: string }): SeoPayloa
         { name: 'Home', url: '/' },
         { name: 'Base Styles', url: '/shop' },
         { name: categoryLabel, url: `/shop?category=${product.category}` },
-        { name: product.id, url: `/product/${product.id}` },
+        { name: product.name, url: canonicalPath },
       ]),
     ],
   };
@@ -601,13 +609,11 @@ async function buildRoutePayload(pathname: string, search: string): Promise<SeoP
   }
 
   if (pathname.startsWith('/product/')) {
-    const productId = decodeURIComponent(pathname.split('/').at(-1) || '');
-    const {productsData} = await import('../data/products');
-    const product = Object.entries(productsData)
-      .flatMap(([category, items]) => items.map((item) => ({...item, category})))
-      .find((item) => item.id === productId);
+    const slugOrId = pathname.split('/').at(-1) || '';
+    const {findProductBySlugOrId} = await import('../lib/productSlug');
+    const {product, category} = findProductBySlugOrId(slugOrId);
     if (product) {
-      return buildProductPayload(product);
+      return buildProductPayload({ ...product, category });
     }
   }
 
@@ -816,7 +822,8 @@ export default function RouteSeo() {
       const payload = await buildRoutePayload(location.pathname, location.search);
       if (cancelled) return;
 
-      const canonical = new URL(`${location.pathname}${location.search}`, SITE_URL).href;
+      const canonicalRelative = payload.canonicalPath || `${location.pathname}${location.search}`;
+      const canonical = new URL(canonicalRelative, SITE_URL).href;
       const imageUrl = toAbsoluteUrl(payload.image);
       const keywords = (payload.keywords?.length ? payload.keywords : DEFAULT_KEYWORDS).join(', ');
 

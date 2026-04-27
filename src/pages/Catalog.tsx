@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { categoryLabels, productsData } from '../data/products';
+import Picture from '../components/Picture';
 
 const previewCategories = [
   'aloha-shirts',
@@ -40,11 +41,12 @@ export default function Catalog() {
     <div className="w-full bg-[#fcfbf7] text-black">
       <section className="relative flex h-[50vh] items-center justify-center text-center">
         <div className="absolute inset-0 z-0">
-          <img
+          <Picture
             src="/site-images/optimized/catalog-hero.jpg"
             alt="Aloha & Co resort wear catalog preview"
             className="h-full w-full object-cover"
-            decoding="async"
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-black/45" />
         </div>
@@ -152,12 +154,10 @@ export default function Catalog() {
       <section className="bg-white px-4 py-16 sm:px-6 md:py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-[1fr_0.95fr] md:gap-14">
           <div className="overflow-hidden border border-neutral-200 bg-[#f7f0e7]">
-            <img
+            <Picture
               src="/site-images/optimized/home-custom-design.jpg"
               alt="Custom resort wear design planning at Aloha & Co"
               className="h-full w-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </div>
           <div className="flex flex-col justify-center">

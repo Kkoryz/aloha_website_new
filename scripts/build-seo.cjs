@@ -19,7 +19,7 @@ const distDir = path.join(root, 'dist');
 const SITE_URL = 'https://alohaandco.com';
 const SITE_NAME = 'Aloha & Co';
 const SITE_TAGLINE =
-  'Factory-direct resort wear manufacturer for aloha shirts, resort dresses, swimwear, matching sets, and private label development with low MOQ.';
+  'Factory-direct resort wear manufacturer. 64+ base styles, custom prints, MOQ 50, sampling 10–15 days, FOB / DDP shipping from Shaoxing.';
 const PUBLISHER_LOGO = `${SITE_URL}/logo.png`;
 const DEFAULT_OG_IMAGE = `${SITE_URL}/site-images/optimized/home-hero.jpg`;
 
@@ -77,6 +77,22 @@ const CATEGORY_LABELS = {
   'accessories': 'Accessories',
 };
 
+function kebab(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function productSlug(p) {
+  return `${kebab(p.name)}-${String(p.id).toLowerCase()}`;
+}
+
+function productPath(p) {
+  return `/product/${productSlug(p)}`;
+}
+
 const FAQ_ITEMS = [
   ['What is your minimum order quantity (MOQ)?', 'Standard MOQ is 50 pieces per style per color. Many brands test 5 prints at 250 total units instead of the 1,500+ units many generalist factories require.'],
   ['How long does sampling take?', 'Custom print sampling usually takes 10–15 days after artwork and fabric direction are confirmed.'],
@@ -121,7 +137,7 @@ const ORG_JSONLD = {
 
 const PAGE_META = {
   '/': {
-    title: `${SITE_NAME} | Resort Wear Manufacturer for Low MOQ Private Label Production`,
+    title: `${SITE_NAME} | Resort Wear Manufacturer (MOQ 50)`,
     description: SITE_TAGLINE,
     image: '/site-images/optimized/home-hero.jpg',
     keywords: 'resort wear manufacturer, custom resort wear, aloha shirt manufacturer, private label swimwear, low MOQ clothing manufacturer, Shaoxing apparel factory, resort wear OEM ODM',
@@ -475,6 +491,7 @@ function pageJsonLd(pathname, meta) {
       inLanguage: 'en',
       publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
     });
+    blocks.push(faqJsonLd());
   } else if (pathname === '/contact') {
     blocks.push({
       '@context': 'https://schema.org',
@@ -756,6 +773,132 @@ ${spa?.scripts || ''}
 `;
 }
 
+function productJsonLd(product) {
+  const numericPrice = (product.price || '').match(/\d+(?:\.\d+)?/)?.[0];
+  const categoryLabel = CATEGORY_LABELS[product.category] || product.category;
+  const canonicalPath = productPath(product);
+  const description = `${product.name} in ${product.fabric}. ${product.moq}${product.sizeRange ? `, ${product.sizeRange}` : ''}. Custom print, labeling, and bulk production available.`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    sku: product.id,
+    mpn: product.id,
+    url: `${SITE_URL}${canonicalPath}`,
+    description,
+    image: [absoluteUrl(product.image || product.flatImage)],
+    brand: { '@type': 'Brand', name: SITE_NAME },
+    category: categoryLabel,
+    manufacturer: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    additionalProperty: [
+      { '@type': 'PropertyValue', name: 'Fabric', value: product.fabric },
+      { '@type': 'PropertyValue', name: 'MOQ', value: product.moq },
+      ...(product.sizeRange
+        ? [{ '@type': 'PropertyValue', name: 'Size Range', value: product.sizeRange }]
+        : []),
+    ],
+  };
+
+  if (numericPrice) {
+    jsonLd.offers = {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: numericPrice,
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}${canonicalPath}`,
+      seller: { '@type': 'Organization', name: SITE_NAME },
+    };
+  }
+
+  return jsonLd;
+}
+
+function renderProductHtml(product, spa) {
+  const categoryLabel = CATEGORY_LABELS[product.category] || product.category;
+  const canonicalPath = productPath(product);
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const description = `${product.name} (${product.id}) in ${product.fabric}. ${product.moq}${product.sizeRange ? `, ${product.sizeRange}` : ''}. Custom print, labeling, and bulk production available from Aloha & Co.`;
+  const title = `${product.name} (${product.id}) | ${categoryLabel} | ${SITE_NAME}`;
+  const image = absoluteUrl(product.image || product.flatImage);
+  const keywords = [product.name, categoryLabel, product.fabric, 'custom resort wear manufacturer', 'private label apparel', `style ${product.id}`].join(', ');
+
+  const jsonLd = [
+    productJsonLd(product),
+    breadcrumbList([
+      ['Home', '/'],
+      ['Base Styles', '/shop'],
+      [categoryLabel, `/shop?category=${product.category}`],
+      [product.name, canonicalPath],
+    ]),
+  ];
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${escapeHtml(title)}</title>
+<meta name="description" content="${escapeHtml(description)}" />
+<meta name="keywords" content="${escapeHtml(keywords)}" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1" />
+<meta name="author" content="${escapeHtml(SITE_NAME)}" />
+<link rel="canonical" href="${escapeHtml(canonical)}" />
+<meta property="og:type" content="product" />
+<meta property="og:title" content="${escapeHtml(title)}" />
+<meta property="og:description" content="${escapeHtml(description)}" />
+<meta property="og:url" content="${escapeHtml(canonical)}" />
+<meta property="og:image" content="${escapeHtml(image)}" />
+<meta property="og:site_name" content="${escapeHtml(SITE_NAME)}" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${escapeHtml(title)}" />
+<meta name="twitter:description" content="${escapeHtml(description)}" />
+<meta name="twitter:image" content="${escapeHtml(image)}" />
+<link rel="alternate" type="application/rss+xml" title="${escapeHtml(SITE_NAME)} News RSS" href="${SITE_URL}/news/feed.xml" />
+<link rel="alternate" type="text/plain" title="LLM Index" href="${SITE_URL}/llms.txt" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+${spa?.stylesheets || ''}
+<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+</head>
+<body>
+<div id="root">
+  <main>
+    <nav aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/shop">Base Styles</a></li><li><a href="/shop?category=${escapeHtml(product.category)}">${escapeHtml(categoryLabel)}</a></li><li>${escapeHtml(product.name)}</li></ol></nav>
+    <article>
+      <header>
+        <p>${escapeHtml(categoryLabel)} · Style ${escapeHtml(product.id)}</p>
+        <h1>${escapeHtml(product.name)}</h1>
+        <p>${escapeHtml(description)}</p>
+        <p><img src="${escapeHtml(image)}" alt="${escapeHtml(product.name)} (${escapeHtml(product.id)}) — ${escapeHtml(categoryLabel)} by ${escapeHtml(SITE_NAME)}" loading="lazy" /></p>
+      </header>
+      <section><h2>Specifications</h2>
+        <dl>
+          <dt>Style ID</dt><dd>${escapeHtml(product.id)}</dd>
+          <dt>Fabric</dt><dd>${escapeHtml(product.fabric)}</dd>
+          <dt>MOQ</dt><dd>${escapeHtml(product.moq)}</dd>
+          ${product.sizeRange ? `<dt>Size range</dt><dd>${escapeHtml(product.sizeRange)}</dd>` : ''}
+          ${product.price ? `<dt>Indicative price</dt><dd>${escapeHtml(product.price)}</dd>` : ''}
+        </dl>
+      </section>
+      <section><h2>Customization</h2>
+        <p>Custom print, fabric direction, labels, hang tags, trims, and packaging available. Sampling 10–15 days; bulk 30–35 days after sample approval. Sample $50/pc and pattern $50/design — both refundable on bulk.</p>
+      </section>
+      <p><a href="/contact?style=${escapeHtml(product.id)}"><strong>Request a quote for ${escapeHtml(product.id)}</strong></a></p>
+      <footer>
+        <p>${escapeHtml(SITE_NAME)} — ${escapeHtml(SITE_TAGLINE)}</p>
+        <p>Contact: <a href="${SITE_URL}/contact">${SITE_URL}/contact</a> · korey@alohaandco.com · +1 (647) 514-0926</p>
+      </footer>
+    </article>
+  </main>
+</div>
+${spa?.scripts || ''}
+</body>
+</html>
+`;
+}
+
 function buildSitemap(articles, products) {
   const articlesLastmod = articles.length ? articles[0].date : new Date().toISOString().slice(0, 10);
   const today = new Date().toISOString().slice(0, 10);
@@ -771,7 +914,7 @@ function buildSitemap(articles, products) {
   }
   for (const p of products || []) {
     urls.push(
-      `  <url>\n    <loc>${SITE_URL}/product/${encodeURIComponent(p.id)}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`,
+      `  <url>\n    <loc>${SITE_URL}${productPath(p)}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`,
     );
   }
   for (const a of articles) {
@@ -1113,6 +1256,13 @@ function main() {
   // Prerendered article HTML — placed in public/news/<slug>/index.html
   for (const a of articles) {
     outputs.push([path.join(publicDir, 'news', a.slug, 'index.html'), renderArticleHtml(a, spa)]);
+  }
+
+  // Prerendered product HTML — placed in public/product/<slug>/index.html
+  for (const p of products) {
+    if (!p.id || !p.name) continue;
+    const slug = productSlug(p);
+    outputs.push([path.join(publicDir, 'product', slug, 'index.html'), renderProductHtml(p, spa)]);
   }
 
   let changed = 0;

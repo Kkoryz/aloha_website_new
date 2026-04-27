@@ -1,18 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { categoryLabels, productsData, type Product } from '../data/products';
+import { findProductBySlugOrId, productPath, productSlug } from '../lib/productSlug';
 
 const fallbackColors = ['#111827', '#f8fafc', '#e2533f', '#2a8f8f', '#f2b84b', '#171717'];
 const fallbackSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
-
-function findProduct(id?: string): { product: Product | null; category: string } {
-  for (const [category, products] of Object.entries(productsData)) {
-    const product = products.find((item) => item.id === id);
-    if (product) return { product, category };
-  }
-
-  return { product: null, category: '' };
-}
 
 function getGallery(product: Product | null) {
   if (!product) return [];
@@ -30,13 +22,21 @@ function getGallery(product: Product | null) {
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
-  const { product, category } = useMemo(() => findProduct(id), [id]);
+  const { product, category } = useMemo(() => findProductBySlugOrId(id), [id]);
   const gallery = useMemo(() => getGallery(product), [product]);
   const [selectedImage, setSelectedImage] = useState('');
 
   useEffect(() => {
     setSelectedImage(gallery[0]?.src || '');
   }, [gallery]);
+
+  useEffect(() => {
+    if (!product || !id) return;
+    const canonical = productSlug(product);
+    if (id.toLowerCase() !== canonical) {
+      window.history.replaceState(null, '', productPath(product));
+    }
+  }, [id, product]);
 
   const related = useMemo(() => (
     category ? productsData[category]?.filter((item) => item.id !== id).slice(0, 3) || [] : []
@@ -228,7 +228,7 @@ export default function ProductDetail() {
               <h2 className="mb-4 text-sm font-black">Related Styles</h2>
               <div className="grid grid-cols-3 gap-3">
                 {related.map((item) => (
-                  <Link to={`/product/${item.id}`} key={item.id} className="group text-center">
+                  <Link to={productPath(item)} key={item.id} className="group text-center">
                     <div className="relative aspect-[4/5] overflow-hidden bg-[#fbfaf7] p-2">
                       <img
                         src={item.image}

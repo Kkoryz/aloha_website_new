@@ -2,6 +2,8 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import RouteSeo from './RouteSeo';
+import FloatingActions from './FloatingActions';
+import GlobalSearch from './GlobalSearch';
 
 const categoryLinks = [
   { label: 'Aloha Shirts', slug: 'aloha-shirts' },
@@ -71,7 +73,11 @@ function MobileLinkGroup({
       <p className="px-3 pb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-gray-500">{title}</p>
       <div className="grid grid-cols-2 gap-1">
         {links.map((link) => (
-          <Link key={link.href} to={link.href} className="block px-3 py-2 text-sm font-medium text-white hover:bg-gray-800">
+          <Link
+            key={link.href}
+            to={link.href}
+            className="flex min-h-[44px] items-center px-3 py-3 text-sm font-medium text-white hover:bg-gray-800"
+          >
             {link.label}
           </Link>
         ))}
@@ -141,8 +147,9 @@ export default function Layout() {
             <div className="flex items-center md:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-white hover:text-gray-300 focus:outline-none"
+                className="-ml-2 inline-flex h-11 w-11 items-center justify-center text-white hover:text-gray-300 focus:outline-none"
                 aria-label="Toggle menu"
+                aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -166,9 +173,12 @@ export default function Layout() {
             </nav>
 
             <div className="ml-auto flex items-center gap-2 sm:gap-3">
+              <div className="hidden lg:block">
+                <GlobalSearch variant="desktop" />
+              </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center border border-white px-3 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-white transition-colors hover:bg-white hover:text-black sm:px-4"
+                className="inline-flex min-h-[44px] items-center justify-center border border-white px-4 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-white transition-colors hover:bg-white hover:text-black sm:px-5"
               >
                 Contact Us
               </Link>
@@ -179,24 +189,26 @@ export default function Layout() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden max-h-[calc(100vh-96px)] overflow-y-auto bg-black border-t border-gray-800">
-            <div className="px-2 pt-2 pb-6 space-y-4 sm:px-3">
+            <div className="px-2 pt-3 pb-6 space-y-4 sm:px-3">
+              <div className="px-1">
+                <GlobalSearch variant="mobile" onNavigate={() => setIsMobileMenuOpen(false)} />
+              </div>
               <div className="grid grid-cols-2 gap-1">
-                <Link to="/" className="block px-3 py-2 text-sm font-medium text-white hover:bg-gray-800">Home</Link>
-                <Link to="/starter-kits" className="block px-3 py-2 text-sm font-medium text-white hover:bg-gray-800">Starter Kits</Link>
-                <Link to="/catalog" className="block px-3 py-2 text-sm font-medium text-white hover:bg-gray-800">Catalog</Link>
-                <Link to="/contact" className="block px-3 py-2 text-sm font-medium text-white hover:bg-gray-800">Contact</Link>
+                <Link to="/" className="flex min-h-[44px] items-center px-3 py-3 text-sm font-medium text-white hover:bg-gray-800">Home</Link>
+                <Link to="/starter-kits" className="flex min-h-[44px] items-center px-3 py-3 text-sm font-medium text-white hover:bg-gray-800">Starter Kits</Link>
+                <Link to="/catalog" className="flex min-h-[44px] items-center px-3 py-3 text-sm font-medium text-white hover:bg-gray-800">Catalog</Link>
+                <Link to="/contact" className="flex min-h-[44px] items-center px-3 py-3 text-sm font-medium text-white hover:bg-gray-800">Contact</Link>
               </div>
               <MobileLinkGroup title="Base Styles" links={styleLinks} />
               <MobileLinkGroup title="Product Lines" links={productLinks} />
               <MobileLinkGroup title="Services" links={serviceLinks} />
               <MobileLinkGroup title="Guidance" links={resourceLinks} />
-              <div className="border-t border-gray-800 pt-4 grid gap-2">
-                <Link to="/contact" className="block px-3 py-2 text-sm font-medium text-white hover:bg-gray-800">Contact</Link>
+              <div className="border-t border-gray-800 pt-4">
                 <Link
                   to="/contact"
-                  className="block border border-gray-700 px-3 py-3 text-center text-xs font-black uppercase tracking-[0.16em] text-white hover:bg-gray-900"
+                  className="flex min-h-[48px] items-center justify-center border border-gray-700 px-3 py-3 text-center text-xs font-black uppercase tracking-[0.16em] text-white hover:bg-gray-900"
                 >
-                  Contact Us
+                  Request Quote
                 </Link>
               </div>
             </div>
@@ -208,6 +220,8 @@ export default function Layout() {
       <main className="flex-grow">
         <Outlet />
       </main>
+
+      <FloatingActions />
 
       {/* Footer */}
       <footer className="bg-black text-white py-12">

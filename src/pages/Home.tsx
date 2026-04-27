@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import DeferredVideo from '../components/DeferredVideo';
+import Picture from '../components/Picture';
 
 const heroImage = '/site-images/optimized/home-hero.jpg';
 const lookbookImages = [
@@ -22,12 +23,12 @@ export default function Home() {
     <div className="flex w-full flex-col">
       <section className="relative flex min-h-[560px] items-center justify-center text-center md:h-screen md:min-h-[620px]">
         <div className="absolute inset-0 z-0">
-          <img
+          <Picture
             src={heroImage}
             alt="Aloha & Co resort wear manufacturing collection"
             className="h-full w-full object-cover"
             fetchPriority="high"
-            decoding="async"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
@@ -85,13 +86,11 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-2 md:grid-cols-4 lg:grid-cols-6">
           {lookbookImages.map((item) => (
             <div key={item.src} className="group relative aspect-[3/4] overflow-hidden rounded-md bg-gray-200">
-              <img
+              <Picture
                 src={item.src}
                 alt={item.alt}
                 style={item.pos ? { objectPosition: item.pos } : undefined}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-                decoding="async"
               />
             </div>
           ))}
@@ -111,12 +110,10 @@ export default function Home() {
             </Link>
           </div>
           <div className="aspect-[4/5] overflow-hidden bg-gray-200">
-            <img
+            <Picture
               src="/site-images/optimized/home-ready-development.jpg"
               alt="Aloha & Co ready design resort wear collection"
               className="h-full w-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </div>
         </div>
@@ -125,12 +122,10 @@ export default function Home() {
       <section className="bg-[#f8f5f0] py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 md:grid-cols-2 md:gap-16">
           <div className="order-2 aspect-[4/5] overflow-hidden bg-gray-200 md:order-1">
-            <img
+            <Picture
               src="/site-images/optimized/home-custom-design.jpg"
               alt="Custom resort wear design and development workspace"
               className="h-full w-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </div>
           <div className="order-1 md:order-2">
@@ -212,12 +207,10 @@ export default function Home() {
             </div>
           </div>
           <div className="aspect-[3/4] overflow-hidden bg-gray-100">
-            <img
+            <Picture
               src="/site-images/optimized/home-guides.jpg"
               alt="Resort wear FAQ and planning resources"
               className="h-full w-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </div>
         </div>
@@ -226,19 +219,26 @@ export default function Home() {
       <section className="bg-[#f4f4f4] py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 md:grid-cols-2 md:gap-16">
           <div className="aspect-[3/4] overflow-hidden bg-gray-100">
-            <img
+            <Picture
               src="/site-images/optimized/home-team.jpg"
               alt="Aloha & Co showroom and production planning process"
               className="h-full w-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </div>
           <div>
             <p className="mb-2 text-xs font-bold uppercase tracking-widest">Our Factory & Team</p>
             <h2 className="mb-4 text-2xl font-bold">SHAOXING, CHINA - CHINA TEXTILE CITY</h2>
             <p className="mb-8 text-sm leading-relaxed text-gray-600">
-              Our production facility is located in Shaoxing, home to China Textile City, the world&apos;s largest textile trading hub. Direct access to thousands of fabric suppliers helps us source faster, sample faster, and keep your costs sharp. No trading companies. No middlemen.
+              Our production facility is located in Shaoxing, home to{' '}
+              <a
+                href="https://en.wikipedia.org/wiki/China_Textile_City"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-gray-400 underline-offset-2 hover:text-black"
+              >
+                China Textile City
+              </a>
+              , the world&apos;s largest textile trading hub. Direct access to thousands of fabric suppliers helps us source faster, sample faster, and keep your costs sharp. No trading companies. No middlemen.
             </p>
             <Link to="/contact" className="inline-flex items-center justify-center bg-black px-8 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-gray-800">
               Meet the Team
@@ -277,12 +277,10 @@ export default function Home() {
             </Link>
           </div>
           <div className="aspect-square overflow-hidden bg-gray-800">
-            <img
+            <Picture
               src="/site-images/optimized/home-fabrics.jpg"
               alt="Resort wear fabric and print development options"
               className="h-full w-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </div>
         </div>
@@ -291,12 +289,10 @@ export default function Home() {
       <section className="bg-[#f4f4f4] py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 md:grid-cols-2 md:gap-16">
           <div className="aspect-[4/5] overflow-hidden border border-gray-200 bg-white">
-            <img
+            <Picture
               src="/site-images/optimized/home-sustainability.jpg"
               alt="Aloha & Co Canada and China resort wear production team"
               className="h-full w-full object-cover"
-              loading="lazy"
-              decoding="async"
             />
           </div>
           <div>
@@ -318,7 +314,7 @@ export default function Home() {
 
       <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-4">
-          <h2 className="mb-12 text-center text-sm font-bold uppercase tracking-widest">Working Terms</h2>
+          <h3 className="mb-12 text-center text-sm font-bold uppercase tracking-widest">Working Terms</h3>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="flex flex-col border border-gray-200 p-6 md:p-8">
               <h3 className="mb-4 text-lg font-bold">PRODUCTION TERMS</h3>
@@ -389,7 +385,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-gray-200 bg-white py-16 text-center md:py-24">
-        <h2 className="mb-8 text-sm font-bold uppercase tracking-widest">Questions? Send Us Your Brief.</h2>
+        <h3 className="mb-8 text-sm font-bold uppercase tracking-widest">Questions? Send Us Your Brief.</h3>
         <div className="flex flex-wrap justify-center gap-4">
           <Link to="/contact" className="inline-flex w-full items-center justify-center bg-black px-8 py-3 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-gray-800 sm:w-auto">
             Request Quote

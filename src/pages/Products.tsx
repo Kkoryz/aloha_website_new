@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { categoryLabels, categorySummaries, productsData, type Product } from '../data/products';
+import { productPath } from '../lib/productSlug';
 
 const categoryOrder = [
   'aloha-shirts',
@@ -56,7 +57,7 @@ const categoryCopy: Record<string, {
 
 function ProductTile({ product }: { product: Product }) {
   return (
-    <Link to={`/product/${product.id}`} className="group block" aria-label={`View ${product.name}`}>
+    <Link to={productPath(product)} className="group block" aria-label={`View ${product.name}`}>
       <div className="relative aspect-[4/5] overflow-hidden bg-[#fbfaf7]">
         <img
           src={product.image}
