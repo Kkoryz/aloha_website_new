@@ -141,6 +141,12 @@ server {
     add_header X-Content-Type-Options "nosniff" always;
     add_header Referrer-Policy "no-referrer-when-downgrade" always;
 
+    # ── 旧产品 URL（含 xlsx- 内部代号）301 跳到清洁版 ──
+    # /product/polyester-aloha-polo-xlsx-03 → /product/polyester-aloha-polo-03
+    location ~ ^/product/(.+)-xlsx-([0-9]+)/?$ {
+        return 301 /product/$1-$2;
+    }
+
     # ── React SPA：所有路由 fallback 到 index.html ──
     location / {
         try_files $uri $uri/ /index.html;

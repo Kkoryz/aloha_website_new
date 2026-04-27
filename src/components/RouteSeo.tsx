@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import type { Product } from '../data/products';
+import { buildProductDescription, buildProductMetaDescription } from '../lib/productCopy';
 import { productPath } from '../lib/productSlug';
 
 const SITE_NAME = 'Aloha & Co';
@@ -206,7 +207,22 @@ function buildDefaultPayload(): SeoPayload {
 
 function buildProductPayload(product: Product & { category: string }): SeoPayload {
   const numericPrice = product.price?.match(/\d+(?:\.\d+)?/)?.[0];
-  const description = `${product.name} in ${product.fabric}. ${product.moq}${product.sizeRange ? `, ${product.sizeRange}` : ''}. Custom print, labeling, and bulk production available.`;
+  const description = buildProductMetaDescription({
+    name: product.name,
+    fabric: product.fabric,
+    moq: product.moq,
+    sizeRange: product.sizeRange,
+    productLine: product.productLine,
+    category: product.category,
+  });
+  const longDescription = buildProductDescription({
+    name: product.name,
+    fabric: product.fabric,
+    moq: product.moq,
+    sizeRange: product.sizeRange,
+    productLine: product.productLine,
+    category: product.category,
+  });
   const categoryLabel = categoryLabels[product.category] || product.category;
   const canonicalPath = productPath(product);
 
@@ -232,7 +248,7 @@ function buildProductPayload(product: Product & { category: string }): SeoPayloa
         sku: product.id,
         mpn: product.id,
         url: `${SITE_URL}${canonicalPath}`,
-        description,
+        description: longDescription,
         image: [toAbsoluteUrl(product.hoverImage || product.image)],
         brand: {
           '@type': 'Brand',

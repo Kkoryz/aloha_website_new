@@ -85,12 +85,46 @@ function kebab(value) {
     .replace(/^-+|-+$/g, '');
 }
 
+function slugIdSuffix(id) {
+  return String(id || '').replace(/^xlsx-/i, '').toLowerCase();
+}
+
 function productSlug(p) {
-  return `${kebab(p.name)}-${String(p.id).toLowerCase()}`;
+  return `${kebab(p.name)}-${slugIdSuffix(p.id)}`;
 }
 
 function productPath(p) {
   return `/product/${productSlug(p)}`;
+}
+
+// Mirrors src/lib/productCopy.ts — keep the two implementations in sync.
+const PRODUCT_AUDIENCE_BY_CATEGORY = {
+  'aloha-shirts': 'aloha programs, resort retail, and corporate uniform buyers',
+  'tshirts-tops': 'lifestyle, beach club, and resort merch programs',
+  'resort-dresses': 'boutique resort and beachwear labels',
+  'swimwear': 'swim brands, hotel merch, and beach club programs',
+  'matching-sets': 'family matching, twinning, and gift programs',
+  'accessories': 'resort merchandising and gift programs',
+};
+
+function moqCount(moq) {
+  const match = String(moq || '').match(/\d+/);
+  return match ? match[0] : '50';
+}
+
+function buildProductDescription(p) {
+  const audience = PRODUCT_AUDIENCE_BY_CATEGORY[p.category] || 'resort wear brands and private-label buyers';
+  const sizes = p.sizeRange ? ` Sized ${p.sizeRange}.` : '';
+  const lineHint = p.productLine ? ` ${String(p.productLine).trim()}.` : '';
+  return `${p.name} for ${audience}.${lineHint} ${p.fabric}.${sizes} MOQ ${moqCount(p.moq)} pcs per style per color. Customizable prints, fabrics, woven labels, hang tags, trims, and packaging. Sampling 10–15 days; bulk 30–35 days after sample approval.`
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function buildProductMetaDescription(p) {
+  const audience = PRODUCT_AUDIENCE_BY_CATEGORY[p.category] || 'resort wear brands and private-label buyers';
+  const sizes = p.sizeRange ? `, ${p.sizeRange}` : '';
+  return `${p.name} in ${p.fabric}${sizes}. MOQ ${moqCount(p.moq)} for ${audience}. Custom prints, labels, and bulk production from Aloha & Co.`;
 }
 
 const FAQ_ITEMS = [
@@ -777,7 +811,7 @@ function productJsonLd(product) {
   const numericPrice = (product.price || '').match(/\d+(?:\.\d+)?/)?.[0];
   const categoryLabel = CATEGORY_LABELS[product.category] || product.category;
   const canonicalPath = productPath(product);
-  const description = `${product.name} in ${product.fabric}. ${product.moq}${product.sizeRange ? `, ${product.sizeRange}` : ''}. Custom print, labeling, and bulk production available.`;
+  const description = buildProductDescription(product);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -818,7 +852,8 @@ function renderProductHtml(product, spa) {
   const categoryLabel = CATEGORY_LABELS[product.category] || product.category;
   const canonicalPath = productPath(product);
   const canonical = `${SITE_URL}${canonicalPath}`;
-  const description = `${product.name} (${product.id}) in ${product.fabric}. ${product.moq}${product.sizeRange ? `, ${product.sizeRange}` : ''}. Custom print, labeling, and bulk production available from Aloha & Co.`;
+  const description = buildProductMetaDescription(product);
+  const longDescription = buildProductDescription(product);
   const title = `${product.name} (${product.id}) | ${categoryLabel} | ${SITE_NAME}`;
   const image = absoluteUrl(product.image || product.flatImage);
   const keywords = [product.name, categoryLabel, product.fabric, 'custom resort wear manufacturer', 'private label apparel', `style ${product.id}`].join(', ');
@@ -870,7 +905,7 @@ ${spa?.stylesheets || ''}
       <header>
         <p>${escapeHtml(categoryLabel)} · Style ${escapeHtml(product.id)}</p>
         <h1>${escapeHtml(product.name)}</h1>
-        <p>${escapeHtml(description)}</p>
+        <p>${escapeHtml(longDescription)}</p>
         <p><img src="${escapeHtml(image)}" alt="${escapeHtml(product.name)} (${escapeHtml(product.id)}) — ${escapeHtml(categoryLabel)} by ${escapeHtml(SITE_NAME)}" loading="lazy" /></p>
       </header>
       <section><h2>Specifications</h2>
@@ -1219,6 +1254,25 @@ function writeIfChanged(file, contents) {
   return true;
 }
 
+// Remove stale prerendered subdirectories from public/{section}/ that are no
+// longer in the canonical slug set. Without this, public/ accumulates dead
+// directories from earlier slug schemes (e.g. /product/*-xlsx-NN) and Vite
+// copies them into dist/, polluting the deployed site.
+function pruneStalePrerenders(sectionDir, currentSlugs) {
+  if (!fs.existsSync(sectionDir)) return 0;
+  const keep = new Set(currentSlugs);
+  let removed = 0;
+  for (const entry of fs.readdirSync(sectionDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    if (keep.has(entry.name)) continue;
+    const indexFile = path.join(sectionDir, entry.name, 'index.html');
+    if (!fs.existsSync(indexFile)) continue;
+    fs.rmSync(path.join(sectionDir, entry.name), { recursive: true, force: true });
+    removed += 1;
+  }
+  return removed;
+}
+
 function main() {
   const articles = readArticles();
   const products = readProducts();
@@ -1259,10 +1313,26 @@ function main() {
   }
 
   // Prerendered product HTML — placed in public/product/<slug>/index.html
+  const productSlugs = [];
   for (const p of products) {
     if (!p.id || !p.name) continue;
     const slug = productSlug(p);
+    productSlugs.push(slug);
     outputs.push([path.join(publicDir, 'product', slug, 'index.html'), renderProductHtml(p, spa)]);
+  }
+
+  const articleSlugs = articles.map((a) => a.slug).filter(Boolean);
+
+  let removedProducts = pruneStalePrerenders(path.join(publicDir, 'product'), productSlugs);
+  let removedArticles = pruneStalePrerenders(path.join(publicDir, 'news'), articleSlugs);
+  if (fs.existsSync(distDir)) {
+    // Vite copied public/ → dist/ before this script ran, so any stale dirs
+    // we remove from public/ above also need removing from dist/.
+    removedProducts += pruneStalePrerenders(path.join(distDir, 'product'), productSlugs);
+    removedArticles += pruneStalePrerenders(path.join(distDir, 'news'), articleSlugs);
+  }
+  if (removedProducts || removedArticles) {
+    console.log(`build-seo: pruned ${removedProducts} stale product dirs, ${removedArticles} stale news dirs`);
   }
 
   let changed = 0;

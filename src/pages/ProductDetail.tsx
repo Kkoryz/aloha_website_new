@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { categoryLabels, productsData, type Product } from '../data/products';
+import { buildProductDescription } from '../lib/productCopy';
 import { findProductBySlugOrId, productPath, productSlug } from '../lib/productSlug';
 
 const fallbackColors = ['#111827', '#f8fafc', '#e2533f', '#2a8f8f', '#f2b84b', '#171717'];
@@ -65,6 +66,14 @@ export default function ProductDetail() {
     'Customization: custom print, color, label, tag and packaging available',
   ];
   const heroImage = selectedImage || gallery[0]?.src || product.image;
+  const productDescription = buildProductDescription({
+    name: product.name,
+    fabric: product.fabric,
+    moq: product.moq,
+    sizeRange: product.sizeRange,
+    productLine: product.productLine,
+    category,
+  });
   const galleryImageScale = '';
   const galleryButtonPadding = 'p-1';
   const heroImageScale = '';
@@ -123,6 +132,10 @@ export default function ProductDetail() {
           <h1 className="mt-2 text-2xl font-black leading-tight md:text-3xl">
             {product.id} {product.name}
           </h1>
+
+          <p className="mt-3 text-sm leading-6 text-neutral-700">
+            {productDescription}
+          </p>
 
           <div className="mt-4 flex gap-8 text-sm">
             <p>

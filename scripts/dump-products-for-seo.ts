@@ -20,6 +20,7 @@ const flat: Array<{
   moq: string;
   price?: string;
   sizeRange?: string;
+  productLine?: string;
   image?: string;
   flatImage?: string;
 }> = [];
@@ -33,6 +34,7 @@ for (const [category, items] of Object.entries(productsData)) {
       moq: p.moq,
       price: p.price,
       sizeRange: p.sizeRange,
+      productLine: p.productLine,
       image: p.hoverImage || p.image,
       flatImage: p.image,
     });
