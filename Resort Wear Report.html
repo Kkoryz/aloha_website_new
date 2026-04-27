@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State of Resort Wear 2026 — Aloha & Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0e0e0c; --paper:#f6f4f0; --cream:#ece8e1; --stone:#d4d0c8;
+  --mist:#b0aca4; --ash:#787470; --smoke:#3c3a36;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+#root{display:flex;min-height:100vh}
+
+/* PROGRESS */
+.progress-bar{position:fixed;top:0;left:0;height:1px;background:var(--ink);z-index:1000;transition:width .12s linear;pointer-events:none}
+
+/* SIDEBAR */
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:210px;background:var(--paper);border-right:1px solid var(--stone);display:flex;flex-direction:column;padding:36px 0;z-index:100;overflow-y:auto}
+.sidebar-logo{padding:0 26px 28px;border-bottom:1px solid var(--stone);margin-bottom:20px}
+.sidebar-logo-label{font-family:var(--mono);font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);display:block;margin-bottom:7px}
+.sidebar-logo-title{font-family:var(--serif);font-size:17px;font-weight:500;line-height:1.35;color:var(--ink)}
+.nav-item{display:flex;align-items:center;gap:9px;padding:5px 26px;cursor:pointer;font-size:11.5px;line-height:1.4;color:var(--ash);transition:color .15s;border:none;background:none;text-align:left;width:100%}
+.nav-item:hover{color:var(--ink)}
+.nav-item.active{color:var(--ink);font-weight:500}
+.nav-num{font-family:var(--mono);font-size:9px;color:var(--stone);flex-shrink:0;width:18px}
+.nav-item.active .nav-num{color:var(--mist)}
+.nav-dot{width:4px;height:4px;border-radius:50%;background:var(--stone);flex-shrink:0;transition:background .15s}
+.nav-item.active .nav-dot{background:var(--ink)}
+
+/* MAIN */
+.main{margin-left:210px;width:calc(100% - 210px)}
+
+/* COVER */
+.cover{background:var(--ink);color:var(--paper);min-height:100vh;display:grid;grid-template-rows:1fr auto;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;inset:0;background:url('uploads/hero.png') center/cover no-repeat;z-index:0;opacity:.55}
+.cover::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(14,14,12,.35) 0%, rgba(14,14,12,.72) 55%, rgba(14,14,12,.92) 100%);z-index:1}
+.cover-inner{padding:80px 96px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative;z-index:2}.cover-deco{display:none}
+.cover-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,244,240,.35);display:flex;align-items:center;gap:14px;margin-bottom:40px}
+.cover-eyebrow::before{content:'';display:block;width:28px;height:1px;background:currentColor}
+.cover-title{font-family:var(--serif);font-size:clamp(60px,6.5vw,100px);font-weight:300;line-height:1.03;letter-spacing:-.015em;max-width:820px;margin-bottom:36px}
+.cover-title em{font-style:italic;font-weight:300}
+.cover-sub{font-size:14px;font-weight:300;line-height:1.75;color:rgba(246,244,240,.48);max-width:480px;margin-bottom:72px}
+.cover-footer{border-top:1px solid rgba(246,244,240,.15);padding:32px 96px;display:flex;gap:56px;position:relative;z-index:2}
+.cover-meta-label{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,244,240,.28);display:block;margin-bottom:5px}
+.cover-meta-value{font-size:13px;color:rgba(246,244,240,.62)}
+.cover-deco{position:absolute;right:-40px;top:60px;width:520px;opacity:.055;pointer-events:none;z-index:1}
+
+/* SECTIONS */
+.section{padding:88px 96px;border-bottom:1px solid var(--stone)}
+.section-ink{background:var(--ink);color:var(--paper);border-bottom-color:#222}
+.section-cream{background:var(--cream)}
+.section-header{margin-bottom:52px}
+.section-tag{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.section-ink .section-tag{color:rgba(246,244,240,.3)}
+.section-tag::after{content:'';display:block;width:40px;height:1px;background:currentColor;opacity:.5}
+.section-title{font-family:var(--serif);font-size:clamp(36px,4vw,58px);font-weight:300;line-height:1.08;letter-spacing:-.01em;margin-bottom:16px}
+.section-ink .section-title{color:var(--paper)}
+.section-title em{font-style:italic}
+.section-lead{font-size:14.5px;font-weight:400;line-height:1.8;color:var(--smoke);max-width:640px}
+.section-ink .section-lead{color:rgba(246,244,240,.72)}
+
+/* STATE OF RESORT WEAR — opening judgment */
+.state-judgment{padding:64px 96px;background:var(--paper);border-bottom:1px solid var(--stone)}
+.state-overline{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.state-overline::after{content:'';flex:1;max-width:40px;height:1px;background:var(--stone)}
+.state-headline{font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);font-weight:300;line-height:1.2;letter-spacing:-.01em;max-width:880px;margin-bottom:56px}
+.state-headline em{font-style:italic}
+.state-forces{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--stone);margin-bottom:56px}
+.state-force{background:var(--paper);padding:36px 32px}
+.state-force-num{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--mist);display:block;margin-bottom:12px}
+.state-force-title{font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.2;margin-bottom:12px}
+.state-force-body{font-size:13px;line-height:1.75;color:var(--smoke)}
+.state-verdict{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding-top:48px;border-top:1px solid var(--stone)}
+.verdict-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-bottom:14px}
+.verdict-text{font-size:14px;line-height:1.8;color:var(--ink)}
+
+/* STATS */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--stone);margin:52px 0}
+.section-ink .stat-grid{background:rgba(246,244,240,.08)}
+.stat-block{background:var(--paper);padding:40px 34px}
+.section-cream .stat-block{background:var(--cream)}
+.section-ink .stat-block{background:#181816}
+.stat-number{font-family:var(--serif);font-size:clamp(44px,5vw,64px);font-weight:300;line-height:1;letter-spacing:-.025em;margin-bottom:10px}
+.section-ink .stat-number{color:var(--paper)}
+.stat-sup{font-size:.42em;vertical-align:super;font-weight:300}
+.stat-label{font-size:12.5px;line-height:1.55;color:var(--ash);max-width:190px}
+.section-ink .stat-label{color:rgba(246,244,240,.68)}
+.stat-source{font-family:var(--mono);font-size:8.5px;color:var(--stone);margin-top:8px;letter-spacing:.04em}
+.section-ink .stat-source{color:rgba(246,244,240,.35)}
+
+/* PULL QUOTE */
+.pull-quote{border-left:2px solid var(--ink);padding:22px 34px;margin:48px 0}
+.section-ink .pull-quote{border-left-color:rgba(246,244,240,.3)}
+.section-cream .pull-quote{border-left-color:var(--ash)}
+.pull-quote-text{font-family:var(--serif);font-size:clamp(19px,2.2vw,27px);font-style:italic;font-weight:400;line-height:1.5}
+.section-ink .pull-quote-text{color:#f6f4f0}
+.pull-quote-attr{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);margin-top:12px;display:block}
+
+/* TABLES */
+.report-table{width:100%;border-collapse:collapse;margin:28px 0}
+.report-table th{font-family:var(--mono);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;padding:10px 16px;text-align:left;background:var(--ink);color:#f6f4f0}
+.section-ink .report-table th{background:rgba(246,244,240,.1);color:rgba(246,244,240,.9)}
+.section-cream .report-table th{background:var(--smoke);color:#f6f4f0;font-weight:600}
+.report-table td{padding:13px 16px;font-size:13px;line-height:1.6;border-bottom:1px solid var(--stone);vertical-align:top;color:var(--smoke)}
+.section-ink .report-table td{border-bottom-color:rgba(246,244,240,.1);color:rgba(246,244,240,.88)}
+.report-table tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+.section-ink .report-table tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+.report-table td:first-child{font-weight:500}
+
+/* BAR CHART */
+.bar-chart{display:flex;flex-direction:column;gap:12px}
+.bar-row{display:flex;align-items:center;gap:14px}
+.bar-lbl{font-size:12px;color:var(--smoke);width:160px;text-align:right;flex-shrink:0}
+.bar-track{flex:1;height:22px;background:var(--cream)}
+.section-ink .bar-track{background:rgba(246,244,240,.06)}
+.bar-fill{height:100%;background:var(--ink);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;transition:width 1.2s ease}
+.bar-val{font-family:var(--mono);font-size:9.5px;color:var(--paper);white-space:nowrap}
+
+/* LIFECYCLE */
+.lifecycle-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--stone);margin:40px 0 0}
+.l-stage{background:var(--paper);padding:22px 18px;cursor:pointer;transition:background .18s}
+.l-stage:hover,.l-stage.on{background:var(--ink);color:var(--paper)}
+.l-num{font-family:var(--mono);font-size:9px;color:var(--mist);margin-bottom:8px;display:block}
+.l-stage:hover .l-num,.l-stage.on .l-num{color:rgba(246,244,240,.35)}
+.l-name{font-family:var(--serif);font-size:15px;font-weight:500;line-height:1.25;margin-bottom:7px}
+.l-q{font-size:11px;line-height:1.5;color:var(--ash)}
+.l-stage:hover .l-q,.l-stage.on .l-q{color:rgba(246,244,240,.55)}
+.l-detail{background:var(--ink);color:var(--paper);padding:32px 40px;margin-bottom:40px}
+.l-detail-name{font-family:var(--serif);font-size:24px;font-weight:400;margin-bottom:8px}
+.l-detail-role{font-size:13.5px;line-height:1.7;color:rgba(246,244,240,.82);max-width:600px}
+
+/* CUSTOMER TABS */
+.cust-tabs{display:flex;border-bottom:1px solid var(--stone)}
+.cust-tab{padding:11px 20px;font-size:12px;font-weight:400;cursor:pointer;border:none;background:none;font-family:var(--sans);color:var(--mist);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
+.cust-tab:hover{color:var(--ink)}
+.cust-tab.on{color:var(--ink);font-weight:500;border-bottom-color:var(--ink)}
+.cust-body{padding-top:36px}
+.cust-desc{font-size:13.5px;color:var(--ash);font-style:italic;margin-bottom:24px}
+.j-header{display:grid;grid-template-columns:155px 1fr 1fr;padding-bottom:10px;border-bottom:1px solid var(--stone);font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist)}
+.j-row{display:grid;grid-template-columns:155px 1fr 1fr;padding:16px 0;border-bottom:1px solid var(--stone)}
+.j-moment{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);padding-right:12px;padding-top:2px}
+.j-think{font-size:13px;line-height:1.65;color:var(--smoke);font-style:italic;padding-right:24px}
+.j-product{font-size:13px;line-height:1.65;color:var(--ash)}
+
+/* 10 THEMES */
+.themes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--stone);margin:44px 0}
+.theme-card{background:var(--paper);padding:36px;position:relative}
+.theme-card:hover{background:#f0eee9}
+.theme-card.featured{background:var(--ink);color:var(--paper);grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.theme-card.featured:hover{background:#181816}
+.th-num{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--mist);margin-bottom:14px;display:block}
+.theme-card.featured .th-num{color:rgba(246,244,240,.28)}
+.th-title{font-family:var(--serif);font-size:22px;font-weight:400;line-height:1.25;margin-bottom:12px}
+.theme-card.featured .th-title{font-size:30px;color:var(--paper)}
+.th-body{font-size:13px;line-height:1.75;color:var(--smoke)}
+.theme-card.featured .th-body{color:rgba(246,244,240,.82)}
+.th-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.th-tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash)}
+.th-tag::before{content:'— '}
+.theme-card.featured .th-tag{color:rgba(246,244,240,.45)}
+.theme-card .th-tag::before{content:'— '}
+
+/* ARCHETYPES */
+.archetype-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--stone);margin:44px 0}
+.archetype-card{background:var(--paper);padding:36px 30px}
+.archetype-card.arch-hero{background:var(--ink);color:var(--paper)}
+.arch-num{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--mist);margin-bottom:10px;display:block}
+.arch-hero .arch-num{color:rgba(246,244,240,.3)}
+.arch-label{font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.2;margin-bottom:10px}
+.arch-hero .arch-label{color:var(--paper)}
+.arch-meta{display:flex;gap:16px;margin-bottom:14px}
+.arch-age,.arch-budget{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--mist);padding:3px 8px;border:1px solid var(--stone)}
+.arch-hero .arch-age,.arch-hero .arch-budget{border-color:rgba(246,244,240,.15);color:rgba(246,244,240,.4)}
+.arch-motivation{font-family:var(--serif);font-size:15.5px;font-style:italic;line-height:1.45;color:var(--smoke);margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--stone)}
+.arch-hero .arch-motivation{color:rgba(246,244,240,.92);border-bottom-color:rgba(246,244,240,.1)}
+.arch-product-label,.arch-channel-label{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);margin-bottom:4px;display:block;margin-top:12px}
+.arch-hero .arch-product-label,.arch-hero .arch-channel-label{color:rgba(246,244,240,.3)}
+.arch-product,.arch-channel{font-size:12.5px;line-height:1.6;color:var(--smoke)}
+.arch-hero .arch-product,.arch-hero .arch-channel{color:rgba(246,244,240,.82)}
+
+/* CHANNELS */
+.channel-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--stone);margin:44px 0}
+.channel-card{background:var(--paper);padding:32px 30px;cursor:pointer;transition:background .15s;border-bottom:none}
+.channel-card:hover{background:#f0eee9}
+.channel-card.open{background:var(--ink);color:var(--paper)}
+.ch-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.ch-label{font-family:var(--serif);font-size:20px;font-weight:500}
+.channel-card.open .ch-label{color:var(--paper)}
+.ch-price{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--mist);white-space:nowrap;margin-top:4px}
+.channel-card.open .ch-price{color:rgba(246,244,240,.3)}
+.ch-customer{font-size:12.5px;color:var(--ash);font-style:italic;margin-bottom:0}
+.channel-card.open .ch-customer{color:rgba(246,244,240,.5)}
+.ch-toggle{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);margin-top:14px}
+.channel-card.open .ch-toggle{color:rgba(246,244,240,.3)}
+.ch-detail{margin-top:18px;padding-top:18px;border-top:1px solid rgba(246,244,240,.1)}
+.ch-detail-row{display:grid;grid-template-columns:100px 1fr;gap:12px;margin-bottom:10px}
+.ch-detail-label{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,244,240,.3);padding-top:2px}
+.ch-detail-val{font-size:12.5px;line-height:1.6;color:rgba(246,244,240,.85)}
+
+/* RISKS */
+.risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:44px 0}
+.risk-card{padding:30px;border:1px solid var(--stone)}
+.risk-card.high{border-top:3px solid var(--ink)}
+.risk-card.medium{border-top:3px solid var(--stone)}
+.risk-severity{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.risk-card.high .risk-severity{color:var(--smoke)}
+.risk-severity::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:currentColor}
+.risk-name{font-family:var(--serif);font-size:20px;font-weight:500;margin-bottom:10px}
+.risk-desc{font-size:13px;line-height:1.7;color:var(--smoke);margin-bottom:12px}
+.risk-mit{font-size:12.5px;line-height:1.65;color:var(--ink);padding-left:14px;position:relative}
+.risk-mit::before{content:'↳';position:absolute;left:0;color:var(--mist)}
+.risk-kpi{font-family:var(--mono);font-size:8.5px;color:var(--mist);margin-top:10px;letter-spacing:.05em}
+
+/* SCENARIOS */
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--stone);margin:44px 0}
+.sc-card{padding:36px 30px}
+.sc-0{background:var(--cream)}
+.sc-1{background:var(--paper)}
+.sc-2{background:var(--ink);color:var(--paper)}
+.sc-label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);margin-bottom:6px;display:block}
+.sc-2 .sc-label{color:rgba(246,244,240,.3)}
+.sc-tagline{font-family:var(--serif);font-size:24px;font-weight:400;font-style:italic;line-height:1.2;margin-bottom:20px;white-space:pre-line}
+.sc-2 .sc-tagline{color:var(--paper)}
+.sc-item{font-size:12.5px;line-height:1.65;color:var(--ash);margin-bottom:7px;padding-left:14px;position:relative}
+.sc-item::before{content:'—';position:absolute;left:0;color:var(--stone)}
+.sc-2 .sc-item{color:rgba(246,244,240,.82)}
+.sc-2 .sc-item::before{color:rgba(246,244,240,.22)}
+.sc-strategy-wrap{margin-top:20px;padding-top:16px;border-top:1px solid var(--stone)}
+.sc-2 .sc-strategy-wrap{border-top-color:rgba(246,244,240,.1)}
+.sc-strategy-label{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);margin-bottom:7px}
+.sc-2 .sc-strategy-label{color:rgba(246,244,240,.3)}
+.sc-strategy{font-size:13px;line-height:1.7;color:var(--smoke)}
+.sc-2 .sc-strategy{color:rgba(246,244,240,.85)}
+.sc-budget{font-family:var(--mono);font-size:10px;color:var(--mist);margin-top:12px;letter-spacing:.06em}
+.sc-2 .sc-budget{color:rgba(246,244,240,.35)}
+
+/* METRICS */
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--stone);margin:44px 0}
+.metric-card{background:var(--paper);padding:32px}
+.metric-card.metric-hero{background:var(--ink);color:var(--paper)}
+.metric-name{font-family:var(--serif);font-size:19px;font-weight:500;margin-bottom:8px}
+.metric-hero .metric-name{color:var(--paper)}
+.metric-formula{font-family:var(--mono);font-size:9.5px;color:var(--mist);margin-bottom:10px;letter-spacing:.04em}
+.metric-hero .metric-formula{color:rgba(246,244,240,.3)}
+.metric-target{font-size:13.5px;font-weight:500;color:var(--smoke);margin-bottom:8px}
+.metric-hero .metric-target{color:var(--paper)}
+.metric-target::before{content:'Target — ';font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);font-weight:400}
+.metric-hero .metric-target::before{color:rgba(246,244,240,.3)}
+.metric-why{font-size:12.5px;line-height:1.65;color:var(--smoke)}
+.metric-hero .metric-why{color:rgba(246,244,240,.8)}
+
+/* AGENDA */
+.agenda-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--stone);margin:44px 0}
+.agenda-phase{background:var(--paper);padding:32px 26px}
+.ag-0{background:var(--ink);color:var(--paper)}
+.ag-window{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);margin-bottom:6px;display:block}
+.ag-0 .ag-window{color:rgba(246,244,240,.3)}
+.ag-phase{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:18px}
+.ag-0 .ag-phase{color:var(--paper)}
+.ag-item{font-size:12.5px;line-height:1.65;color:var(--ash);margin-bottom:8px;padding-left:14px;position:relative}
+.ag-item::before{content:'–';position:absolute;left:0;color:var(--stone)}
+.ag-0 .ag-item{color:rgba(246,244,240,.82)}
+.ag-0 .ag-item::before{color:rgba(246,244,240,.25)}
+
+/* PLAYBOOK */
+.playbook-steps{margin:40px 0}
+.pb-step{display:grid;grid-template-columns:72px 1fr;border-top:1px solid var(--stone);padding:36px 0}
+.pb-step:last-child{border-bottom:1px solid var(--stone)}
+.pb-num{font-family:var(--serif);font-size:46px;font-weight:300;color:var(--stone);line-height:1;padding-top:4px}
+.pb-title{font-family:var(--serif);font-size:23px;font-weight:500;margin-bottom:12px;line-height:1.2}
+.pb-body{font-size:13.5px;line-height:1.8;color:var(--smoke);max-width:600px}
+.pb-body p{margin-bottom:0}
+
+/* SUPPLIER TABLE */
+.supplier-note{font-family:var(--mono);font-size:9px;color:var(--mist);margin-top:24px;line-height:1.7;letter-spacing:.03em;padding:16px;border:1px solid var(--stone)}
+
+/* CHECKLIST */
+.checklist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:44px}
+.cl-group-title{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--stone);color:var(--mist)}
+.cl-item{display:flex;align-items:flex-start;gap:9px;font-size:13px;line-height:1.5;margin-bottom:8px;color:var(--smoke);cursor:pointer}
+.cl-box{width:13px;height:13px;border:1.5px solid var(--stone);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.cl-item.checked .cl-box{background:var(--ink);border-color:var(--ink)}
+.cl-item.checked .cl-box::after{content:'';display:block;width:5px;height:3px;border-left:1.5px solid white;border-bottom:1.5px solid white;transform:rotate(-45deg) translateY(-1px)}
+.cl-item.checked span{text-decoration:line-through;color:var(--stone)}
+
+/* SOURCES */
+.source-list{margin-top:36px;display:flex;flex-direction:column;gap:12px}
+.source-item{display:grid;grid-template-columns:40px 1fr;gap:8px;align-items:start}
+.source-num{font-family:var(--mono);font-size:9.5px;color:var(--mist);padding-top:2px}
+.source-text{font-size:12.5px;line-height:1.65;color:var(--ash)}
+.source-url{font-family:var(--mono);font-size:9px;color:var(--stone);display:block;margin-top:3px;letter-spacing:.03em}
+
+/* DIVIDER + LAYOUT */
+.divider{border:none;border-top:1px solid var(--stone);margin:48px 0}
+.section-ink .divider{border-top-color:rgba(246,244,240,.08)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:52px}
+.exhibit{margin:40px 0;padding:32px;border:1px solid var(--stone)}
+.exhibit-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-bottom:6px}
+.exhibit-title{font-family:var(--serif);font-size:21px;font-weight:400;margin-bottom:24px}
+.feature-strip{background:var(--ink);color:var(--paper);padding:56px 96px;display:grid;grid-template-columns:1fr 2px 1fr;gap:56px;align-items:start;border-bottom:1px solid #1a1a18}
+.feat-div{background:rgba(246,244,240,.1)}
+.feat-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,244,240,.3);margin-bottom:10px}
+.feat-num{font-family:var(--serif);font-size:72px;font-weight:300;line-height:1;color:var(--paper);margin-bottom:8px}
+.feat-desc{font-size:13px;color:rgba(246,244,240,.75);line-height:1.7}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(246,244,240,.35);padding:52px 96px;font-size:11px;font-family:var(--mono);line-height:1.9;letter-spacing:.02em}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid rgba(246,244,240,.07)}
+.footer-brand{font-family:var(--serif);font-size:20px;color:rgba(246,244,240,.62);letter-spacing:0}
+
+@media(max-width:1100px){
+  .sidebar{display:none}.main{margin-left:0;width:100%}
+  .section,.state-judgment,.feature-strip,.footer{padding:56px 36px}
+  .cover-inner{padding:56px 36px 0}.cover-footer{padding:28px 36px}
+  .lifecycle-strip{grid-template-columns:repeat(4,1fr)}
+  .stat-grid,.themes-grid,.channel-grid,.risk-grid,.two-col{grid-template-columns:1fr}
+  .theme-card.featured,.state-forces,.archetype-grid,.scenario-grid,.agenda-grid,.checklist-grid{grid-template-columns:1fr}
+  .metrics-grid{grid-template-columns:1fr}
+  .feature-strip{grid-template-columns:1fr}.feat-div{display:none}
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="rwr-data.jsx"></script>
+<script type="text/babel" src="rwr-ui.jsx"></script>
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "showSources": true,
+  "compactMode": false
+}/*EDITMODE-END*/;
+
+function App() {
+  const [active, setActive] = useState('cover');
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { threshold: 0.15, rootMargin: '-20% 0px -65% 0px' });
+    window.NAV.forEach(item => { const el = document.getElementById(item.id); if (el) obs.observe(el); });
+    return () => obs.disconnect();
+  }, []);
+
+  const S = ({ id, className='section', tag, title, lead, children }) => (
+    <section id={id} className={className}>
+      {tag && <div className="section-header"><SectionHeader tag={tag} title={title} lead={lead} /></div>}
+      {children}
+    </section>
+  );
+
+  return (<>
+    <ProgressBar />
+    <Sidebar active={active} />
+    <main className="main">
+
+      {/* COVER */}
+      <section id="cover" className="cover">
+        <svg className="cover-deco" viewBox="0 0 500 700" fill="none">
+          <path d="M250 650C250 650 180 580 200 480C220 380 300 340 280 240C260 140 160 100 200 20" stroke="white" strokeWidth="1.5"/>
+          <path d="M200 480C200 480 120 460 100 400C80 340 140 300 130 240" stroke="white" strokeWidth="1"/>
+          <path d="M280 360C280 360 340 320 360 260C380 200 340 160 360 100" stroke="white" strokeWidth="1"/>
+          <ellipse cx="200" cy="460" rx="60" ry="40" stroke="white" strokeWidth="0.6" transform="rotate(-20 200 460)"/>
+          <ellipse cx="290" cy="330" rx="55" ry="35" stroke="white" strokeWidth="0.6" transform="rotate(15 290 330)"/>
+          <ellipse cx="340" cy="240" rx="50" ry="32" stroke="white" strokeWidth="0.6" transform="rotate(25 340 240)"/>
+          <path d="M230 520C230 520 170 510 150 460C130 410 170 380 160 330" stroke="white" strokeWidth="0.7"/>
+          <circle cx="200" cy="20" r="4" stroke="white" strokeWidth="0.8" fill="none"/>
+        </svg>
+        <div className="cover-inner">
+          <div className="cover-eyebrow">Aloha & Co. · Market Report 2026</div>
+          <h1 className="cover-title">State of<br/><em>Resort Wear</em><br/>2026</h1>
+          <p className="cover-sub">A practical playbook for boutique owners, resort retailers, and emerging labels. From market signals and consumer archetypes to capsule strategy, channel execution, and reorder infrastructure.</p>
+        </div>
+        <div className="cover-footer">
+          <div><span className="cover-meta-label">Prepared for</span><span className="cover-meta-value">Boutique Buyers · Resort Retailers · Emerging Labels</span></div>
+          <div><span className="cover-meta-label">Published</span><span className="cover-meta-value">2026</span></div>
+          <div><span className="cover-meta-label">Category</span><span className="cover-meta-value">Resort & Lifestyle Apparel</span></div>
+        </div>
+      </section>
+
+      {/* 00 EXEC SUMMARY */}
+      <S id="exec" tag="00 · Executive Summary" title="Resort wear is moving<br/>from vacation category<br/>to <em>lifestyle commerce.</em>" lead="The opportunity is real, but the operating model has changed. This report maps the market signals, consumer archetypes, channel logic, risks, and practical steps needed to build a resort wear line that sells, reorders, and grows.">
+        <div className="stat-grid">
+          <div className="stat-block"><div className="stat-number"><span className="stat-sup">US$</span><Counter value="25.98"/>B</div><div className="stat-label">Global resort wear market size, 2024</div><div className="stat-source">Zion Market Research</div></div>
+          <div className="stat-block"><div className="stat-number"><Counter value="5.8"/>%</div><div className="stat-label">CAGR through 2034 — reaching US$45.66B</div><div className="stat-source">Zion Market Research</div></div>
+          <div className="stat-block"><div className="stat-number"><span className="stat-sup">US$</span><Counter value="11.6"/>T</div><div className="stat-label">Travel & Tourism GDP contribution globally, 2025</div><div className="stat-source">WTTC 2026</div></div>
+        </div>
+        <PullQuote text='"We do not only study how customers buy from us. We study why their customers buy from them."' attr="Aloha & Co. — Strategic Positioning" />
+        <p style={{fontSize:14,lineHeight:1.85,color:'var(--ash)',maxWidth:680,marginTop:36}}>This report maps two parallel lifecycles — the brand owner's journey from idea to product launch, and the end customer's journey from travel inspiration to repeat purchase. The strongest resort wear brands design for both at the same time.</p>
+      </S>
+
+      {/* 01 STATE OF RESORT WEAR */}
+      <div id="state" className="state-judgment">
+        <div className="state-overline">01 · State of Resort Wear 2026</div>
+        <h2 className="state-headline">Resort wear is no longer just what you pack for vacation.<br/><em>It is travel-led lifestyle commerce — and it is reshaping how brands build, how retailers buy, and how consumers shop.</em></h2>
+        <div className="state-forces">
+          {[
+            { num:'Force 01', title:'Travel Has Become the Lifestyle', body:"The $11.6T travel economy has permanently expanded who buys resort wear, when they buy it, and how long they wear it after the trip ends. The customer is no longer buying for a single trip — they are building a travel wardrobe." },
+            { num:'Force 02', title:'Social Commerce Has Collapsed the Funnel', body:"A Reel or a tagged post now drives more trial than a season of wholesale orders. Shopify data shows AI-attributed orders grew 11× in 2025. Brands without a content system cannot compete for attention from social-first shoppers." },
+            { num:'Force 03', title:'Inventory Risk Has Never Been More Consequential', body:"In a market defined by cautious buyers and tariff uncertainty, overbuying an untested print is the fastest way to end a new resort label. Low MOQ test-and-reorder is not a budget constraint — it is the correct operating model." },
+          ].map((f, i) => (
+            <div key={i} className="state-force">
+              <span className="state-force-num">{f.num}</span>
+              <div className="state-force-title">{f.title}</div>
+              <div className="state-force-body">{f.body}</div>
+            </div>
+          ))}
+        </div>
+        <div className="state-verdict">
+          <div>
+            <div className="verdict-label">The Core Judgment</div>
+            <div className="verdict-text">The brands that win in 2026 will be those that build around the end customer's full journey — from destination inspiration to post-trip repeat purchase — rather than around seasonal production calendars and generic wholesale pitches.</div>
+          </div>
+          <div>
+            <div className="verdict-label">What This Means for Aloha & Co.</div>
+            <div className="verdict-text">The strongest position is not factory. It is resort wear brand-building partner — helping boutique owners and emerging labels turn a print idea into a retail-ready capsule, then reorder the winners. Every service should be designed around that arc.</div>
+          </div>
+        </div>
+      </div>
+
+      {/* 02 MARKET SIGNALS */}
+      <S id="market" tag="02 · Market Signals" title="What the Data Says<br/>About Resort Wear<br/><em>in 2026</em>">
+        <div className="stat-grid">
+          <div className="stat-block"><div className="stat-number"><span className="stat-sup">US$</span><Counter value="21.75"/>B</div><div className="stat-label">Hawaii visitor spending in 2025 — up 5.7% from 2024</div><div className="stat-source">State of Hawaii DBEDT</div></div>
+          <div className="stat-block"><div className="stat-number"><Counter value="16.4"/>%</div><div className="stat-label">U.S. retail sales via e-commerce in 2025 — $1.234T total</div><div className="stat-source">U.S. Census Bureau</div></div>
+          <div className="stat-block"><div className="stat-number"><Counter value="460"/>K</div><div className="stat-label">Orders at Faire's July 2025 Market from 76K+ retailers</div><div className="stat-source">Faire Markets 2025</div></div>
+        </div>
+        <div className="exhibit">
+          <div className="exhibit-label">Exhibit 1 · Category Growth Comparison</div>
+          <div className="exhibit-title">CAGR Across Adjacent Categories</div>
+          <BarChart data={[
+            { label:'Resort Wear',          pct:56, value:'5.8% CAGR to 2034' },
+            { label:'Swimwear',             pct:66, value:'6.8% CAGR to 2030' },
+            { label:'Travel & Tourism GDP', pct:96, value:'9.8% of global economy' },
+            { label:'U.S. E-Commerce',      pct:52, value:'+5.4% YoY 2025' },
+          ]} />
+        </div>
+        <table className="report-table" style={{marginTop:32}}>
+          <thead><tr>{['Signal','Signal','Implication for resort wear brands'].map((h,i)=><th key={i}>{h}</th>)}</tr></thead>
+          <tbody>
+            {[
+              ['Travel economy expanding','WTTC: US$11.6T global GDP in 2025, 9.8% of economy, 366M jobs, 1.54B international arrivals.','Resort wear remains tied to a large and growing travel economy — not just seasonal fashion.'],
+              ['Destination retail is value-driven','Hawaii: US$21.75B visitor spending in 2025, +5.7% YoY, despite slightly fewer arrivals.','Fewer but higher-spending travelers support premium product and better merchandising.'],
+              ['Resort wear is a sizable niche','Zion Market Research: US$25.98B in 2024, projected US$45.66B by 2034, 5.8% CAGR.','Large enough for niche brands with strong print and destination identity.'],
+              ['E-commerce is required','U.S. Census: 2025 e-commerce at US$1.234T, 16.4% of total retail, +5.4% YoY.','Brands need product pages, mobile shopping, content, and reorder systems before scaling.'],
+              ['Wholesale remains active',"Faire July 2025: ~460K orders from 76K+ retailers, 1.3M+ products purchased.",'Independent retailers actively buy when collections are easy to understand and merchandise.'],
+              ['Fashion environment is cautious','McKinsey/BoF: 46% of executives expected conditions to worsen; agility, value, and AI defined the 2026 outlook.','Small labels that stay lean and test-first are better positioned than large seasonal bets.'],
+            ].map((row,i)=><tr key={i}>{row.map((c,j)=><td key={j} style={j>0?{color:'var(--ash)',fontSize:13}:{}}>{c}</td>)}</tr>)}
+          </tbody>
+        </table>
+      </S>
+
+      {/* 03 10 THEMES */}
+      <S id="themes" className="section section-cream" tag="03 · Ten Themes" title="Defining Resort Wear<br/><em>in 2026</em>" lead="Ten structural shifts shaping how boutiques buy, how brands launch, and how consumers choose resort apparel. These are not trend forecasts — they are operating realities.">
+        <ThemesSection />
+      </S>
+
+      {/* 04 TWO LIFECYCLES */}
+      <S id="lifecycles" className="section section-ink" tag="04 · Framework" title="The Two Lifecycles<br/>That Decide<br/><em>Resort Wear Success</em>">
+        <table className="report-table">
+          <thead><tr>{['Lifecycle','Who it describes','Core question','What this report solves'].map((h,i)=><th key={i}>{h}</th>)}</tr></thead>
+          <tbody>
+            <tr><td>Brand Owner</td><td>Boutique owners, hotel retail, gift shops, surf shops, Instagram founders, emerging labels</td><td>How do I move from idea to a product line that sells and reorders?</td><td>Positioning, capsule planning, sampling, low MOQ production, launch, wholesale, reorder.</td></tr>
+            <tr><td>End Customer</td><td>Tourists, families, couples, honeymooners, surfers, wedding guests, locals, social shoppers</td><td>Why does the final customer buy resort wear, wear it, share it, and come back?</td><td>Product mix, print story, merchandising, content, retail display, and repeat purchase logic.</td></tr>
+          </tbody>
+        </table>
+        <PullQuote text="The strongest resort wear brands design for both lifecycles simultaneously — reducing production risk while giving the end customer a reason to buy beyond 'I need clothes for vacation.'" />
+      </S>
+
+      {/* 05 BRAND LIFECYCLE */}
+      <S id="brand-lifecycle" tag="05 · Brand Owner Journey" title="From Inspiration<br/>to <em>Repeatable</em><br/>Retail Program" lead="Seven stages. Each with a core question the brand owner is asking and a clear partner role. Click each stage to explore.">
+        <LifecycleSection />
+        <div className="exhibit" style={{marginTop:0}}>
+          <div className="exhibit-label">Exhibit 2 · Aloha & Co. Support by Stage</div>
+          <div className="exhibit-title">What the brand needs — and how we help</div>
+          <table className="report-table">
+            <thead><tr>{['#','Stage','Customer state','Aloha & Co. role'].map((h,i)=><th key={i}>{h}</th>)}</tr></thead>
+            <tbody>{window.STAGES.map((s,i)=><tr key={i}><td style={{fontFamily:'var(--mono)',fontSize:10,color:'var(--mist)'}}>{s.num}</td><td>{s.name}</td><td style={{fontStyle:'italic',color:'var(--ash)',fontSize:13}}>{s.q}</td><td style={{color:'var(--ash)',fontSize:13}}>{s.role}</td></tr>)}</tbody>
+          </table>
+        </div>
+      </S>
+
+      {/* 06 END CUSTOMER JOURNEY */}
+      <S id="customer" className="section section-cream" tag="06 · End Customer Journey" title="Who Is the<br/><em>Final Customer,</em><br/>and Why Do They Buy?" lead="Five distinct customer archetypes. Each moves through a unique journey. Select a segment to explore their moments, mindsets, and product implications.">
+        <CustomerSection />
+        <hr className="divider" />
+        <div className="exhibit-label" style={{marginBottom:16}}>Exhibit 3 · Product Strategy by Customer Type</div>
+        <table className="report-table">
+          <thead><tr>{['B2B Customer','Their End Customers','Recommended Product Focus'].map((h,i)=><th key={i}>{h}</th>)}</tr></thead>
+          <tbody>{[
+            ['Hawaii Gift Shop','Tourists, families, souvenir buyers','Aloha shirts, kids sets, destination prints, wearable souvenirs.'],
+            ['Resort Boutique','Couples, resort guests, wedding guests','Dresses, matching sets, cover-ups, resort dinner pieces.'],
+            ['Surf Shop','Beach lifestyle, surfers, active travelers','Board shorts, rash guards, UPF tops, utility resort shirts.'],
+            ['Instagram Brand','Social-media shoppers, creator audiences','Capsule drops, bold custom prints, matching sets, campaign-ready looks.'],
+            ['Hotel Retail','Resort guests, honeymooners, biz-leisure','Premium shirts, dresses, lightweight essentials, giftable accessories.'],
+            ['Emerging Label','Niche community, destination fans','Custom print capsule, signature fit blocks, seasonal drops.'],
+          ].map((row,i)=><tr key={i}>{row.map((c,j)=><td key={j} style={j>0?{color:'var(--ash)',fontSize:13}:{}}>{c}</td>)}</tr>)}</tbody>
+        </table>
+      </S>
+
+      {/* 07 CONSUMER ARCHETYPES */}
+      <S id="archetypes" tag="07 · Consumer Archetypes" title="Six Archetypes That<br/>Drive Resort Wear<br/><em>Purchase Decisions</em>" lead="Each archetype represents a distinct motivation, budget, and product logic. Brands that design for one or two specific archetypes build stronger product stories than those that try to serve everyone.">
+        <ArchetypesSection />
+      </S>
+
+      {/* 08 PRODUCT STRATEGY */}
+      <S id="product-strategy" className="section section-cream" tag="08 · Product Strategy" title="Building the Right<br/><em>Product Mix</em><br/>for Your Channel">
+        <div className="two-col" style={{marginBottom:48}}>
+          <div>
+            <PullQuote text='"Build products for vacation memories, not just vacation outfits."' />
+            <p style={{fontSize:13.5,lineHeight:1.8,color:'var(--ash)',marginTop:24}}>The strongest resort wear products serve multiple occasions — they are photo-ready, packable, wash well, and carry a destination story that makes them memorable long after the trip ends. A garment that only works at the beach is half a product.</p>
+          </div>
+          <div>
+            <div className="exhibit-label" style={{marginBottom:16}}>First Capsule by Channel</div>
+            <table className="report-table">
+              <thead><tr><th>Channel</th><th>Recommended First Mix</th></tr></thead>
+              <tbody>{[
+                ['Boutique Owner','2 aloha shirts, 1 shirt dress, 1 matching set, 1 kids or swim item'],
+                ['Instagram Label','1 hero print, 1 men\'s shirt, 1 women\'s dress/set, 1 swim item'],
+                ['Resort Boutique','1 elevated shirt, 1 dinner dress, 1 cover-up, 1 matching set'],
+                ['Surf Shop','1 board short, 1 rash guard, 1 resort shirt, 1 quick-dry short'],
+                ['Gift Shop','1 destination aloha shirt, 1 kids shirt, 1 cover-up, 1 family set'],
+              ].map((row,i)=><tr key={i}><td>{row[0]}</td><td style={{color:'var(--ash)',fontSize:13}}>{row[1]}</td></tr>)}</tbody>
+            </table>
+          </div>
+        </div>
+        <table className="report-table">
+          <thead><tr>{['Product','Volume role','Fit risk','Notes'].map((h,i)=><th key={i}>{h}</th>)}</tr></thead>
+          <tbody>{[
+            ['Aloha / resort shirt','Core volume SKU','Low — relaxed fit','High visual identity, easy gifting, strong reorder potential.'],
+            ['Pull-on short / beach pant','Basket builder','Very low — elastic waist','Completes outfit, easy sizing, strong for gift shop.'],
+            ['Dress / cover-up','Display hero','Medium — size variance','Strong for boutiques and hotel shops. High visual impact.'],
+            ['Matching set','Story driver','Medium — must fit as pair','Higher basket size, strong for destination and group travel.'],
+            ['Rash guard / UPF top','Channel specific','Low — athletic fit standard','Essential for surf shop, beach club. Growing category.'],
+            ['Kids / family style','Optional in first capsule','Low if graded from adult','Use only if matching is part of the brand promise.'],
+          ].map((row,i)=><tr key={i}>{row.map((c,j)=><td key={j} style={j>0?{color:'var(--ash)',fontSize:13}:{}}>{c}</td>)}</tr>)}</tbody>
+        </table>
+      </S>
+
+      {/* 09 PLAYBOOK */}
+      <S id="playbook" tag="09 · Practical Playbook" title="Six Steps to a<br/><em>Retail-Ready</em><br/>Resort Wear Launch" lead="The practical sequence from brand definition to wholesale-ready product. Follow in order — each step reduces risk before the next one begins.">
+        <PlaybookSection />
+      </S>
+
+      {/* 10 CHANNEL PLAYBOOK */}
+      <S id="channels" className="section section-cream" tag="10 · Channel Playbook" title="How to Sell in<br/>Each Channel — and<br/><em>What Each Buyer Needs</em>" lead="Six channels, six different buyers, six different pitches. Click each channel to expand the display logic, buyer pitch, and reorder expectations.">
+        <ChannelsSection />
+        <div className="exhibit" style={{marginTop:40}}>
+          <div className="exhibit-label">Exhibit 4 · Launch Content Timeline</div>
+          <div className="exhibit-title">Pre-launch content calendar by channel type</div>
+          <table className="report-table">
+            <thead><tr><th>Timing</th><th>Content Focus</th><th>Assets to Prepare</th></tr></thead>
+            <tbody>{[
+              ['4–6 weeks before launch','Brand mood, destination story, print inspiration','Moodboard, print close-up, color palette, founder note.'],
+              ['3–4 weeks before launch','Product proof','Sample fitting, fabric movement, behind-the-scenes, production detail.'],
+              ['2 weeks before launch','Styling and use cases','Beach-to-dinner outfits, family matching, resort dinner, travel packing.'],
+              ['Launch week','Conversion','Product pages, size guide, line sheet, drop email, IG posts, short video.'],
+              ['2–4 weeks after launch','Social proof and reorder','UGC, customer photos, bestsellers, restock survey, wholesale follow-up.'],
+            ].map((row,i)=><tr key={i}>{row.map((c,j)=><td key={j} style={j>0?{color:'var(--ash)',fontSize:13}:{}}>{c}</td>)}</tr>)}</tbody>
+          </table>
+        </div>
+      </S>
+
+      {/* 11 RISK MAP + SCENARIOS */}
+      <S id="risks" tag="11 · Risk Map & Scenario Planning" title="Where Resort Wear<br/>Brands <em>Fail —</em><br/>and How to Avoid It" lead="Seven common failure modes and three planning scenarios. Risk awareness before launch is cheaper than correction after it.">
+        <RiskSection />
+        <hr className="divider" />
+        <div className="section-tag" style={{marginBottom:20}}>Scenario Planning</div>
+        <h3 style={{fontFamily:'var(--serif)',fontSize:28,fontWeight:400,marginBottom:12}}>Three Outcomes for <em>the First Capsule</em></h3>
+        <p style={{fontSize:14,color:'var(--ash)',marginBottom:0,maxWidth:600}}>The scenario you land in depends on market conditions, print strength, and channel execution. Plan for Base, prepare for Conservative, and have a fast-reorder plan ready for Upside.</p>
+        <ScenarioSection />
+      </S>
+
+      {/* 12 METRICS */}
+      <S id="metrics" className="section section-cream" tag="12 · Metrics That Matter" title="The Operating<br/>Dashboard for a<br/><em>Resort Wear Line</em>" lead="Eight metrics. Track all of them from day one. The brands that know their numbers make better reorder decisions, faster.">
+        <MetricsSection />
+      </S>
+
+      {/* 13 SUPPLIER LANDSCAPE */}
+      <S id="suppliers" tag="13 · Supplier Landscape" title="Where Aloha & Co.<br/><em>Fits</em> in the<br/>Production Ecosystem">
+        <p style={{fontSize:14,color:'var(--ash)',marginBottom:32,maxWidth:640,lineHeight:1.8}}>The resort wear production landscape ranges from generic large-factory suppliers to print-on-demand services. Each option involves a different trade-off between minimum order, brand support, category expertise, and lead time.</p>
+        <table className="report-table">
+          <thead><tr>{['Supplier Type','MOQ','Category Focus','Design Support','Lead Time','Price Tier'].map((h,i)=><th key={i}>{h}</th>)}</tr></thead>
+          <tbody>{window.SUPPLIERS.map((s,i)=>(
+            <tr key={i} style={i===0?{background:'rgba(14,14,12,0.04)'}:{}}>
+              <td style={{fontWeight: i===0?600:500}}>{s.name}{i===0&&<span style={{fontFamily:'var(--mono)',fontSize:8,letterSpacing:'0.14em',textTransform:'uppercase',background:'var(--ink)',color:'var(--paper)',padding:'2px 7px',marginLeft:8}}>THIS REPORT</span>}</td>
+              <td style={{color:'var(--ash)',fontSize:13}}>{s.moq}</td>
+              <td style={{color:'var(--ash)',fontSize:13}}>{s.focus}</td>
+              <td style={{color:'var(--ash)',fontSize:13}}>{s.design}</td>
+              <td style={{fontFamily:'var(--mono)',color:'var(--ash)',fontSize:11}}>{s.lead}</td>
+              <td style={{color:'var(--ash)',fontSize:13}}>{s.tier}</td>
+            </tr>
+          ))}</tbody>
+        </table>
+        <table className="report-table" style={{marginTop:16}}>
+          <thead><tr><th>Supplier</th><th>Notes</th></tr></thead>
+          <tbody>{window.SUPPLIERS.map((s,i)=><tr key={i}><td style={i===0?{fontWeight:600}:{}}>{s.name}</td><td style={{color:'var(--ash)',fontSize:13}}>{s.note}</td></tr>)}</tbody>
+        </table>
+        <div className="supplier-note">Disclaimer: This landscape assessment is based on publicly available information only. It does not constitute a factory audit, certification, or endorsement. Verify all production partners independently before placing orders.</div>
+      </S>
+
+      {/* 14 ACTION AGENDA */}
+      <S id="agenda" className="section section-ink" tag="14 · Aloha & Co. Action Agenda" title="What to Do<br/><em>Next —</em><br/>in Four Phases" lead="From immediate decisions to growth infrastructure. A phased action plan for boutique owners and emerging labels working with Aloha & Co.">
+        <AgendaSection />
+        <PullQuote text="Aloha & Co.'s strongest offer is not factory capacity. It is a guided path from print brief to retail-ready capsule — with the data, samples, and support to reorder the winners." />
+      </S>
+
+      {/* 15 FOUNDER CHECKLIST */}
+      <S id="checklist" tag="15 · Founder Checklist" title="Before You Launch,<br/><em>Check Every Box.</em>" lead="A retail-ready resort wear line requires discipline across brand, product, production, sales, and metrics. Click each item to mark your progress.">
+        <ChecklistSection />
+      </S>
+
+      {/* 16 SOURCE NOTES */}
+      <S id="sources" className="section section-cream" tag="16 · Source Notes" title="<em>Market data</em><br/>and references">
+        <p style={{fontSize:13,color:'var(--ash)',maxWidth:640,lineHeight:1.8,marginBottom:0}}>All market figures in this report are directional and sourced from public research. They should be refreshed before paid media, investor presentations, or editorial publication. No proprietary trend data or non-public research was used.</p>
+        <div className="source-list">
+          {window.SOURCES.map((s,i)=>(
+            <div key={i} className="source-item">
+              <span className="source-num">{s.num}</span>
+              <div><span className="source-text">{s.text}</span><span className="source-url">{s.url}</span></div>
+            </div>
+          ))}
+        </div>
+      </S>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <div className="footer-top">
+          <div className="footer-brand">Aloha & Co.</div>
+          <div><div style={{color:'rgba(246,244,240,.5)',fontFamily:'var(--sans)',fontSize:12,marginBottom:4}}>Resort Wear Brand-Building Partner</div><div>MOQ 50 · Custom Print · Factory-Direct · FOB/DDP</div></div>
+        </div>
+        <div style={{maxWidth:640}}>Market data sourced from WTTC (2026), State of Hawaii DBEDT (2026), Zion Market Research, Grand View Research, U.S. Census Bureau Q4 2025, Faire Markets (2025), McKinsey/BoF State of Fashion 2026, Deloitte 2025 Retail Outlook, and Shopify Enterprise Blog. All figures are directional.</div>
+      </footer>
+    </main>
+
+    <TweaksPanel>
+      <TweakSection label="Display">
+        <TweakToggle label="Show Data Sources" value={tweaks.showSources} onChange={v=>setTweak('showSources',v)} />
+        <TweakToggle label="Compact Table Rows" value={tweaks.compactMode} onChange={v=>setTweak('compactMode',v)} />
+      </TweakSection>
+    </TweaksPanel>
+
+    <style>{`
+      .stat-source { display: ${tweaks.showSources?'block':'none'} !important; }
+      .report-table td { padding-top: ${tweaks.compactMode?9:13}px !important; padding-bottom: ${tweaks.compactMode?9:13}px !important; }
+    `}</style>
+  </>);
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
